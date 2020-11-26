@@ -9,6 +9,7 @@ public class DesignatorLever : MonoBehaviour
     bool isGrasped = false;
     public float moveX;
     public float moveY;
+    public string name;
     void Start()
     {
         lever = transform.GetChild(1).gameObject;

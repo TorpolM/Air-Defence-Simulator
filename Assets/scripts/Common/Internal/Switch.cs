@@ -11,6 +11,7 @@ public class Switch : MonoBehaviour
 
     public AudioClip[] sources;
     AudioSource source;
+    public string name;
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();

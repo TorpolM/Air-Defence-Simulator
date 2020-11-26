@@ -6,19 +6,26 @@ using UnityEngine.UI;
 public class RadarScreen : MonoBehaviour
 {
     public GameObject TCC;
+    TCC _TCC;
     public GameObject antenna;
     public GameObject beam;
+    Radar_Advanced _beam;
     public GameObject antennaCW;
     public GameObject beamCW;
+    Radar_Advanced _beamCW;
     public GameObject sweepLine;
     public GameObject rangeRings;
     public GameObject blip;
     public GameObject blipCW;
     public GameObject IFF;
     public GameObject SweepControl;
+    handwheel _SweepControl;
     public GameObject IFFControl;
+    handwheel _IFFControl;
     public GameObject VideoControl;
+    handwheel _VideoControl;
     public GameObject RRControl;
+    handwheel _RRControl;
     public float scale;
     public AnimationCurve curve;
     public int displayMode;
@@ -32,64 +39,69 @@ public class RadarScreen : MonoBehaviour
     public float Ft;
     void Start()
     {
+        _TCC = TCC.GetComponent<TCC>();
+        _beam = beam.GetComponent<Radar_Advanced>();
+        _beamCW = beamCW.GetComponent<Radar_Advanced>();
+        _SweepControl = SweepControl.GetComponent<handwheel>();
+        _RRControl = RRControl.GetComponent<handwheel>();
+        _VideoControl = VideoControl.GetComponent<handwheel>();
+        _IFFControl = IFFControl.GetComponent<handwheel>();
     }
 
     // Update is called once per frame
     void Update()
     {
         sweepLine.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-        sweepLine.transform.GetChild(0).GetComponent<Image>().color = new Color(0,255,0,SweepControl.GetComponent<handwheel>().position/255);
+        sweepLine.transform.GetChild(0).GetComponent<Image>().color = new Color(0,255,0,_SweepControl.position/255);
 
         for(int cnt = 0;cnt < 10;cnt++){
-            rangeRings.transform.GetChild(cnt).GetComponent<Image>().color = new Color(0,255,0,RRControl.GetComponent<handwheel>().position/255);
+            rangeRings.transform.GetChild(cnt).GetComponent<Image>().color = new Color(0,255,0,_RRControl.position/255);
         }
 
         
 
         //PPI-MTI
-        targets = beam.GetComponent<Radar_Advanced>().targets;
-        targetStrs = beam.GetComponent<Radar_Advanced>().targetStrs;
-        targetIFFs = beam.GetComponent<Radar_Advanced>().targetIFF;
+        targets = _beam.targets;
+        targetStrs = _beam.targetStrs;
+        targetIFFs = _beam.targetIFF;
         for(int cnt2 = 0;cnt2 < targets.Count;cnt2++){
             var target = targets[cnt2];
+            var range = Vector3.Distance(target.transform.position,antenna.transform.position);
             GameObject echo = Instantiate(blip);
             echo.transform.parent = transform;
 		    var PrdB = targetStrs[cnt2];
-            var size = (136 + PrdB) / 10 /* -Mathf.Cos(Vector3.Angle(antenna.transform.forward,target.transform.forward))*/;
+            var size = Mathf.InverseLerp(100,20,-PrdB) + 1;
             var pos = target.transform.position - antenna.transform.position;
-            echo.transform.GetComponent<Image>().color = new Color(0,255,0,VideoControl.GetComponent<handwheel>().position/255);
-            echo.transform.localScale = new Vector3(size,1,pos.y);
+            echo.GetComponent<BlipControl>().intencity = _VideoControl.position/255;
+            echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1*size,pos.y);
             echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
             if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
                 echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
             }
-            Destroy(echo,size / 5);
 
-            if(TCC.GetComponent<TCC>().isIFFAuto || TCC.GetComponent<TCC>().isIFFSend){
-                var range = Vector3.Distance(target.transform.position,antenna.transform.position);
-                if(TCC.GetComponent<TCC>().isIFFCoded && targetIFFs[cnt2] == 1){
+            if(_TCC.isIFFAuto || _TCC.isIFFSend){
+
+                if(_TCC.isIFFCoded && targetIFFs[cnt2] == 1){
                     echo = Instantiate(IFF);
                     echo.transform.parent = transform;
-                    pos = pos * 1.01f;
-                    echo.transform.GetComponent<Image>().color = new Color(0,255,0,VideoControl.GetComponent<handwheel>().position/255);
-                    echo.transform.localScale = new Vector3(range/100000 * 5,1f,pos.y);
+                    pos = Vector3.Normalize(pos) * (range + 1280);
+                    echo.GetComponent<BlipControl>().intencity = _IFFControl.position/255;
+                    echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1,pos.y);
                     echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
                     if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
                         echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
                     }
-                    Destroy(echo,size / 5);
                 }
-                if(!TCC.GetComponent<TCC>().isIFFCoded && (targetIFFs[cnt2] == 1 || targetIFFs[cnt2] == 3)){
+                if(!_TCC.isIFFCoded && (targetIFFs[cnt2] == 1 || targetIFFs[cnt2] == 3)){
                     echo = Instantiate(IFF);
                     echo.transform.parent = transform;
-                    pos = pos * 1.032f;
-                    echo.transform.GetComponent<Image>().color = new Color(0,255,0,VideoControl.GetComponent<handwheel>().position/255);
-                    echo.transform.localScale = new Vector3(range/100000 * 5,1f,pos.y);
+                    pos = Vector3.Normalize(pos) * (range + 1280);
+                    echo.GetComponent<BlipControl>().intencity = _IFFControl.position/255;
+                    echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1,pos.y);
                     echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
                     if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
                         echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
                     }
-                    Destroy(echo,size / 5);
                 }
             }
             
@@ -99,14 +111,13 @@ public class RadarScreen : MonoBehaviour
 
 
         //PSI
-        targets = beamCW.GetComponent<Radar_Advanced>().targets;
-        targetStrs = beamCW.GetComponent<Radar_Advanced>().targetStrs;
+        targets = _beamCW.targets;
+        targetStrs = _beamCW.targetStrs;
         for(int cnt2 = 0;cnt2 < targets.Count;cnt2++){
             var target = targets[cnt2];
             GameObject echo = Instantiate(blipCW);
             echo.transform.parent = transform;
 		    var PrdB = targetStrs[cnt2];
-            var size = (136 + PrdB) / 10;
             var spd = Mathf.Cos(Vector3.Angle(antennaCW.transform.forward,target.transform.forward) * Mathf.Deg2Rad) * -target.GetComponent<Rigidbody>().velocity.magnitude;
             spd = spd / 1234 * 75;
             var pos = Vector3.Normalize(target.transform.position - antenna.transform.position);
@@ -117,7 +128,6 @@ public class RadarScreen : MonoBehaviour
             if(true){
                 echo.transform.localPosition = new Vector3(-pos.x,pos.z,0f);;
             }
-            Destroy(echo,size / 5);
         }
 
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExternalCameraControl : MonoBehaviour
 {
     public GameObject Controller;
+    ViewControl _Controller;
 
     GameObject camTgt;
     Vector3 targetPos; 
@@ -12,14 +13,14 @@ public class ExternalCameraControl : MonoBehaviour
     float mouseInputY;
     void Start()
     {
-
+        _Controller = Controller.GetComponent<ViewControl>();
     }
 
 
     void Update()
     {
-        if (Controller.GetComponent<ViewControl>().camTgt != camTgt) {
-            camTgt = Controller.GetComponent<ViewControl>().camTgt;
+        if (_Controller.camTgt != camTgt) {
+            camTgt = _Controller.camTgt;
             transform.parent = camTgt.transform;
             transform.localScale = new Vector3(1f,1f,1f);
             transform.localPosition = new Vector3 (0,5,50);

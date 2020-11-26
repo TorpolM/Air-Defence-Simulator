@@ -14,6 +14,7 @@ public class IndicatorButton : MonoBehaviour
     public Material matOn;
 
     Material[] mats;
+    public string name;
 
     void Start()
     {

@@ -3,6 +3,127 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
+
+public class ADP :MonoBehaviour{
+    public float ADPSectorStart;
+    public float ADPSectorEnd;
+    public GameObject parAntenna;
+    public GameObject par;
+    Radar_Advanced _par;
+    public GameObject TCC;
+    TCC _TCC;
+    public GameObject pointer;
+    public GameObject[] screens;
+    public GameObject tf;
+    public bool inADPSector = false;
+    List<GameObject> targets = new List<GameObject>();
+    List<int> targetIFF = new List<int>();
+    public GameObject[] trucks;
+    public Vector2 pointerPos;
+
+    Vector3 lastTargetPos;
+    int truckID = 0;
+    int cnt = 0;
+    bool ishooked = false;
+
+
+    void Start()
+    {
+        _TCC = TCC.GetComponent<TCC>();
+        _par = par.GetComponent<Radar_Advanced>();
+        lastTargetPos = par.transform.position;
+    }
+
+
+    void Update()
+    {
+        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorStart) < 1 && !inADPSector){
+            inADPSector = true;
+        }
+        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorEnd) < 1 && inADPSector){
+            inADPSector = false;
+        }
+
+        trucks = GameObject.FindGameObjectsWithTag("ADPTruckFile");
+        pointerPos = new Vector2(pointer.transform.localPosition.x / -512 * _TCC.scale + parAntenna.transform.position.x,pointer.transform.localPosition.y / 512 * _TCC.scale + parAntenna.transform.position.z);
+
+        if(inADPSector){
+            targets = _par.targets;
+            targetIFF = _par.targetIFF;
+            cnt = 0;
+            foreach (GameObject target in targets){
+                if(Vector3.Distance(target.transform.position,lastTargetPos) > 5460){
+                    Vector2 targetPos = new Vector2(target.transform.position.x,target.transform.position.z); 
+                    bool isCorrelated = false;
+                    foreach(GameObject truck in trucks){
+                        truckFile _truck = truck.GetComponent<truckFile>();
+                        if(Vector2.Distance(_truck.currentPos,targetPos) < 6000){
+                            _truck.updateTruck(targetPos,0);
+                            isCorrelated = true;
+                            break;
+                        }
+                    }
+                    if(!isCorrelated){
+                        int IFF = 0;
+                        if(_TCC.isIFFAuto || _TCC.isIFFSend){
+                            if(targetIFF[cnt] == 1){
+                                IFF = 1;
+                            }
+                            if(targetIFF[cnt] == 2){
+                                IFF = 2;
+                            }
+                        }
+                        GameObject truckf = Instantiate(tf);
+                        truckf.transform.parent = transform;
+                        truckf.GetComponent<truckFile>().fileID = truckID;
+                        truckf.GetComponent<truckFile>().truckPos = targetPos;
+                        truckf.GetComponent<truckFile>().currentPos = targetPos;
+                        truckf.GetComponent<truckFile>().utime = Time.time;
+                        truckf.GetComponent<truckFile>().ID = IFF;
+                        foreach(GameObject screen in screens){
+                            screen.GetComponent<ADPScreen>().newSymbol(truckf);
+                        }
+                        truckID += 1;
+                    }
+                    lastTargetPos = target.transform.position;
+                }
+                cnt += 1;
+            }
+        }
+
+
+        ishooked = false;
+        foreach(GameObject truck in trucks){
+            truckFile _truck = truck.GetComponent<truckFile>();
+
+            
+
+
+            if(Vector2.Distance(_truck.currentPos,pointerPos) < 2000 && !ishooked){
+                if(_TCC.isIDHost){
+                    _truck.ID = 2;
+                }
+                if(_TCC.isIDFrnd){
+                    _truck.ID = 1;
+                }
+                if(_TCC.isIDUnk){
+                    _truck.ID = 0;
+                }
+                ishooked = true;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/* 
 public class ADP : MonoBehaviour
 {
     public float ADPSectorStart;
@@ -40,7 +161,7 @@ public class ADP : MonoBehaviour
         if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorStart) < 1){
             inADPSector = true;
         }
-        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorEnd) < 1){
+        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorEnd) < 1 && inADPSector){
             inADPSector = false;
             float centerX = 0;
             float centerY = 0;
@@ -117,3 +238,4 @@ public class ADP : MonoBehaviour
         }
     }
 }
+*/

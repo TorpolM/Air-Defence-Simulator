@@ -10,17 +10,24 @@ public class TCC : MonoBehaviour
     public Text azimuthMils;
     public GameObject lever;
     public RectTransform trackSymbol;
-    public GameObject Btn_IFF1;
-    public GameObject Btn_IFF2;
-    public GameObject Btn_IFF3;
-    public GameObject Btn_IFF4;
+    public IndicatorButton Btn_IFF1;
+    public IndicatorButton Btn_IFF2;
+    public IndicatorButton Btn_IFF3;
+    public IndicatorButton Btn_IFF4;
     public int IFFMode = 1;
-    public GameObject Btn_IFFAuto;
+    public IndicatorButton Btn_IFFAuto;
     public bool isIFFAuto;
-    public GameObject Btn_IFFSend;
+    public IndicatorButton Btn_IFFSend;
     public bool isIFFSend;
-    public GameObject Btn_IFFCoded;
+    public IndicatorButton Btn_IFFCoded;
     public bool isIFFCoded;
+    public IndicatorButton Btn_IDHost;
+    public bool isIDHost;
+    public IndicatorButton Btn_IDFrnd;
+    public bool isIDFrnd;
+    public IndicatorButton Btn_IDUnk;
+    public bool isIDUnk;
+    public float scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,60 +49,64 @@ public class TCC : MonoBehaviour
         trackSymbol.transform.localPosition += new Vector3(leverPos.moveX * Time.deltaTime * -20f,leverPos.moveY * Time.deltaTime * 20f,0f);
 
 
-        if(Btn_IFF1.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFF1.pushed){
             IFFMode = 1;
         }
-        if(Btn_IFF2.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFF2.pushed){
             IFFMode = 2;
         }
-        if(Btn_IFF3.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFF3.pushed){
             IFFMode = 3;
         }
-        if(Btn_IFF4.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFF4.pushed){
             IFFMode = 4;
         }
         if(IFFMode == 1){
-            Btn_IFF1.GetComponent<IndicatorButton>().lampOn = true;
+            Btn_IFF1.lampOn = true;
         } else {
-            Btn_IFF1.GetComponent<IndicatorButton>().lampOn = false;
+            Btn_IFF1.lampOn = false;
         }
         if(IFFMode == 2){
-            Btn_IFF2.GetComponent<IndicatorButton>().lampOn = true;
+            Btn_IFF2.lampOn = true;
         } else {
-            Btn_IFF2.GetComponent<IndicatorButton>().lampOn = false;
+            Btn_IFF2.lampOn = false;
         }
         if(IFFMode == 3){
-            Btn_IFF3.GetComponent<IndicatorButton>().lampOn = true;
+            Btn_IFF3.lampOn = true;
         } else {
-            Btn_IFF3.GetComponent<IndicatorButton>().lampOn = false;
+            Btn_IFF3.lampOn = false;
         }
         if(IFFMode == 4){
-            Btn_IFF4.GetComponent<IndicatorButton>().lampOn = true;
+            Btn_IFF4.lampOn = true;
         } else {
-            Btn_IFF4.GetComponent<IndicatorButton>().lampOn = false;
+            Btn_IFF4.lampOn = false;
         }
 
 
-        isIFFSend = Btn_IFFSend.GetComponent<IndicatorButton>().pushed;
+        isIFFSend = Btn_IFFSend.pushed;
 
 
-        if(Btn_IFFCoded.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFFCoded.pushed){
             if(isIFFCoded){
                 isIFFCoded = false;
             } else {
                 isIFFCoded = true;
             }
         }
-        Btn_IFFCoded.GetComponent<IndicatorButton>().lampOn = isIFFCoded;
+        Btn_IFFCoded.lampOn = isIFFCoded;
 
 
-        if(Btn_IFFAuto.GetComponent<IndicatorButton>().pushed){
+        if(Btn_IFFAuto.pushed){
             if(isIFFAuto){
                 isIFFAuto = false;
             } else {
                 isIFFAuto = true;
             }
         }
-        Btn_IFFAuto.GetComponent<IndicatorButton>().lampOn = !isIFFAuto;
+        Btn_IFFAuto.lampOn = !isIFFAuto;
+
+        isIDHost = Btn_IDHost.pushed;
+        isIDFrnd = Btn_IDFrnd.pushed;
+        isIDUnk = Btn_IDUnk.pushed;
     }
 }

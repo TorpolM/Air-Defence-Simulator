@@ -15,6 +15,7 @@ public class handwheel : MonoBehaviour
     public AudioClip[] sources;
     AudioSource source;
     Transform knob;
+    public string name;
     void Start()
     {
         source = gameObject.GetComponent<AudioSource>();

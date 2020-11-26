@@ -78,6 +78,7 @@
      <Compile Include="Assets\scripts\Common\GameSystem\ScenarioTrigger.cs" />
      <Compile Include="Assets\scripts\Common\GameSystem\TimeScale.cs" />
      <Compile Include="Assets\scripts\Common\Internal\ButtonSwitch.cs" />
+     <Compile Include="Assets\scripts\Common\Internal\ConsoleControlElement.cs" />
      <Compile Include="Assets\scripts\Common\Internal\DialSwitch.cs" />
      <Compile Include="Assets\scripts\Common\Internal\handwheel.cs" />
      <Compile Include="Assets\scripts\Common\Internal\IndicatorButton.cs" />
@@ -86,6 +87,7 @@
      <Compile Include="Assets\scripts\Common\Internal\Room.cs" />
      <Compile Include="Assets\scripts\Common\Internal\Station.cs" />
      <Compile Include="Assets\scripts\Common\Internal\Switch.cs" />
+     <Compile Include="Assets\scripts\Common\Internal\tooltip.cs" />
      <Compile Include="Assets\scripts\Common\Map\Icon.cs" />
      <Compile Include="Assets\scripts\Common\Map\Map.cs" />
      <Compile Include="Assets\scripts\Common\Map\MapControl.cs" />
@@ -113,6 +115,7 @@
      <Compile Include="Assets\scripts\Common\Weapon\Status_Missile.cs" />
      <Compile Include="Assets\scripts\Common\Weapon\Turret.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\ADPScreen.cs" />
+     <Compile Include="Assets\scripts\IHAWK\BCC\BlipControl.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\DesignatorLever.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\RadarScreen.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\SymbolControl.cs" />

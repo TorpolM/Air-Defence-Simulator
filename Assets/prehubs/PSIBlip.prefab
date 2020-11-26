@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7418553855632592009}
   - component: {fileID: 7418553855632592007}
   - component: {fileID: 7418553855632592006}
+  - component: {fileID: 4014384106492117356}
   m_Layer: 9
   m_Name: PSIBlip
   m_TagString: Untagged
@@ -72,3 +73,15 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4014384106492117356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418553855632592008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b711aa0083a6e4988125f54c5757dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,6 +7,7 @@ public class ButtonSwitch : MonoBehaviour
     public bool pushed;
     Transform knob;
     private AudioSource[] sources;
+    public string name;
     void Start()
     {
         knob = ((transform.GetChild(0)).transform.GetChild(0)).transform.GetChild(0);

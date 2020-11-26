@@ -5,7 +5,9 @@ using UnityEngine;
 public class ViewControl : MonoBehaviour
 {
     public Camera ExternalCam;
-    public Camera InternalCam;
+    InternalCam ExtCam;
+    public Camera InternalCam_o;
+    InternalCam IntCam;
     public GameObject camTgt;
 
 
@@ -20,6 +22,7 @@ public class ViewControl : MonoBehaviour
         ownShip = GameObject.FindWithTag("Player");
         EntitiyIndex = 0;
         camTgt = ownShip;
+        IntCam = InternalCam_o.GetComponent<InternalCam>();
     }
 
     // Update is called once per frame
@@ -31,16 +34,16 @@ public class ViewControl : MonoBehaviour
         }
         if(viewMode == 0){
             ExternalCam.enabled = true;
-            InternalCam.enabled = false;
+            InternalCam_o.enabled = false;
             camTgt = ownShip;
         }
         if(viewMode == 1){
             ExternalCam.enabled = true;
-            InternalCam.enabled = false;
+            InternalCam_o.enabled = false;
         }
         if(viewMode >= 2){
             ExternalCam.enabled = false;
-            InternalCam.enabled = true;
+            InternalCam_o.enabled = true;
         }
 
 
@@ -49,19 +52,19 @@ public class ViewControl : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F5)){
             viewMode = 2;
-            InternalCam.GetComponent<InternalCam>().changeRoom(0);
+            IntCam.changeRoom(0);
         }
         if(Input.GetKeyDown(KeyCode.F6)){
             viewMode = 3;
-            InternalCam.GetComponent<InternalCam>().changeRoom(1);
+            IntCam.changeRoom(1);
         }
         if(Input.GetKeyDown(KeyCode.F7)){
             viewMode = 4;
-            InternalCam.GetComponent<InternalCam>().changeRoom(2);
+            IntCam.changeRoom(2);
         }
         if(Input.GetKeyDown(KeyCode.F8)){
             viewMode = 5;
-            InternalCam.GetComponent<InternalCam>().changeRoom(3);
+            IntCam.changeRoom(3);
         }
         if(Input.GetKeyDown(KeyCode.F2) && Entities != null){
             viewMode = 1;

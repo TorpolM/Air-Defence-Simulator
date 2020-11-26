@@ -7,6 +7,7 @@ public class InternalCam : MonoBehaviour
     public GameObject Controller;
     public GameObject turret;
     public GameObject crtRoom;
+    Room _crtRoom;
     public GameObject crtStation;
 
     GameObject[] rooms;
@@ -26,23 +27,24 @@ public class InternalCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(crtRoom.GetComponent<Room>().crtStation == null){
-            changeStation(crtRoom.GetComponent<Room>().stations[0]);
+        _crtRoom = crtRoom.GetComponent<Room>();
+        if(_crtRoom.crtStation == null){
+            changeStation(_crtRoom.stations[0]);
         }
         if(Input.GetKeyDown(KeyCode.KeypadPlus)){
-            var index = crtRoom.GetComponent<Room>().stations.IndexOf(crtStation);
-            if(index + 1 == crtRoom.GetComponent<Room>().stations.Count){
-                changeStation(crtRoom.GetComponent<Room>().stations[0]);
+            var index = _crtRoom.stations.IndexOf(crtStation);
+            if(index + 1 == _crtRoom.stations.Count){
+                changeStation(_crtRoom.stations[0]);
             } else {
-                changeStation(crtRoom.GetComponent<Room>().stations[index + 1]);
+                changeStation(_crtRoom.stations[index + 1]);
             }
         }
         if(Input.GetKeyDown(KeyCode.KeypadMinus)){
-            var index = crtRoom.GetComponent<Room>().stations.IndexOf(crtStation);
+            var index = _crtRoom.stations.IndexOf(crtStation);
             if(index == 0){
-                changeStation(crtRoom.GetComponent<Room>().stations[crtRoom.GetComponent<Room>().stations.Count - 1]);
+                changeStation(_crtRoom.stations[_crtRoom.stations.Count - 1]);
             } else {
-                changeStation(crtRoom.GetComponent<Room>().stations[index - 1]);
+                changeStation(_crtRoom.stations[index - 1]);
             }
         }
         if(Input.GetKeyDown(KeyCode.KeypadEnter) && crtStation.GetComponent<Station>().useOrthographic){

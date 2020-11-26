@@ -11,9 +11,15 @@ public class Radar_Advanced : MonoBehaviour
     public float Pt;
     public float dB;
     public float Ft;
+    float rcs;
+    public float len;
+    public float gain;
+    float range;
+    float Pr;
+    float PrdB;
     void Start()
     {
-        
+        calcParameters(dB,Ft);
     }
     void FixedUpdate()
     {
@@ -23,14 +29,20 @@ public class Radar_Advanced : MonoBehaviour
     }
     void OnTriggerStay(Collider refrect){
         if(refrect.tag == "Entity"){
-            var rcs = refrect.GetComponent<Entity>().RCS;
-            var len = 3e8f / Ft;
-            var range = Vector3.Distance(antenna.transform.position,refrect.transform.position);
-            var Pr = (Pt * Mathf.Pow(dB,2) * Mathf.Pow(len,2) * rcs) / (Mathf.Pow(4 * Mathf.PI,3) * Mathf.Pow(range,4));
-            var PrdB = 10 * Mathf.Log10(Pr);
+            rcs = refrect.GetComponent<Entity>().RCS;
+            range = Vector3.Distance(antenna.transform.position,refrect.transform.position);
+            Pr = Pt * Mathf.Pow(gain,2) * Mathf.Pow(len,2) * rcs /((Mathf.Pow(4*3.14f,3)*Mathf.Pow(range,4)));
+            PrdB = 10 * Mathf.Log10(Pr);
             targets.Add(refrect.gameObject);
             targetStrs.Add(PrdB);
             targetIFF.Add(refrect.GetComponent<Entity>().side);
         }
 	}
+
+
+    void calcParameters(float dB,float Ft){
+        len = 3e8f / Ft;
+        gain = Mathf.Pow(10,dB / 10);
+
+    }
 }
