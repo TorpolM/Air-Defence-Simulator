@@ -38,18 +38,18 @@ public class MouseConsoleControl : MonoBehaviour
                 if (interestObj.GetComponent<DialSwitch>() != null){
                     tooltipText = interestObj.GetComponent<DialSwitch>().name;
                     if (Input.GetKeyDown(KeyCode.Mouse0) && interestObj.GetComponent<DialSwitch>().position > 0){
-                        interestObj.GetComponent<DialSwitch>().SoundCW();
+                        interestObj.GetComponent<DialSwitch>().SoundCCW();
                     }
                     if (Input.GetKeyDown(KeyCode.Mouse1) && interestObj.GetComponent<DialSwitch>().position < (interestObj.GetComponent<DialSwitch>().numPosition - 1)){
-                        interestObj.GetComponent<DialSwitch>().SoundCCW();
+                        interestObj.GetComponent<DialSwitch>().SoundCW();
                     }
                 }
                 if (interestObj.GetComponent<Switch>() != null){
                     tooltipText = interestObj.GetComponent<Switch>().name;
-                    if (Input.GetKeyDown(KeyCode.Mouse0) && interestObj.GetComponent<Switch>().position > 0){
+                    if (Input.GetKeyDown(KeyCode.Mouse0)){
                         interestObj.GetComponent<Switch>().SoundNx();
                     }
-                    if (Input.GetKeyDown(KeyCode.Mouse1) && interestObj.GetComponent<Switch>().position < (interestObj.GetComponent<Switch>().numPosition - 1)){
+                    if (Input.GetKeyDown(KeyCode.Mouse1)){
                         interestObj.GetComponent<Switch>().SoundPv();
                     }
                 }

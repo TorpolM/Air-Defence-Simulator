@@ -75,7 +75,7 @@ public class RadarScreen : MonoBehaviour
             echo.GetComponent<BlipControl>().intencity = _VideoControl.position/255;
             echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1*size,pos.y);
             echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-            if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
+            if(pos.x / scale * 512f < 440f && pos.z / scale * 512f < 440f){
                 echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
             }
 
@@ -88,7 +88,7 @@ public class RadarScreen : MonoBehaviour
                     echo.GetComponent<BlipControl>().intencity = _IFFControl.position/255;
                     echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1,pos.y);
                     echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-                    if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
+                    if(pos.x / scale * 512f < 440f && pos.z / scale * 512f < 440f){
                         echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
                     }
                 }
@@ -99,7 +99,7 @@ public class RadarScreen : MonoBehaviour
                     echo.GetComponent<BlipControl>().intencity = _IFFControl.position/255;
                     echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1,pos.y);
                     echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-                    if(pos.x / scale * 512f < 420f && pos.z / scale * 512f < 420f){
+                    if(pos.x / scale * 512f < 440f && pos.z / scale * 512f < 440f){
                         echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
                     }
                 }
@@ -122,7 +122,7 @@ public class RadarScreen : MonoBehaviour
             spd = spd / 1234 * 75;
             var pos = Vector3.Normalize(target.transform.position - antenna.transform.position);
             echo.transform.GetComponent<Image>().color = new Color(0,255,0,VideoControl.GetComponent<handwheel>().position/255);
-            pos = pos * (475.5f - spd);
+            pos = pos * (494f - spd);
             echo.transform.localScale = new Vector3(1,1,1);
             echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
             if(true){

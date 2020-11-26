@@ -24,13 +24,17 @@ public class Switch : MonoBehaviour
         knob.localEulerAngles = new Vector3(initAngle + moveAngle * position,0f,0f);
     }
     public void SoundNx(){
-        AudioClip clip = sources[0];
-        source.PlayOneShot(clip);
-        position += -1;
+        if(position < numPosition - 1){
+            AudioClip clip = sources[0];
+            source.PlayOneShot(clip);
+            position += 1;
+        }
     }
     public void SoundPv(){
-        AudioClip clip = sources[0];
-        source.PlayOneShot(clip);
-        position += 1;
+        if(position > 0){
+            AudioClip clip = sources[0];
+            source.PlayOneShot(clip);
+            position += -1;
+        }
     }
 }

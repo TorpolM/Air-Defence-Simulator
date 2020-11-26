@@ -27,6 +27,14 @@ public class TCC : MonoBehaviour
     public bool isIDFrnd;
     public IndicatorButton Btn_IDUnk;
     public bool isIDUnk;
+    public IndicatorButton Btn_DispLocal;
+    public bool DispLocal = true;
+    public IndicatorButton Btn_DispRemote;
+    public bool DispRemote = true;
+    public IndicatorButton Btn_DispFrnd;
+    public bool DispFrnd = true;
+    public IndicatorButton Btn_DispHost;
+    public bool DispHost = true;
     public float scale;
     // Start is called before the first frame update
     void Start()
@@ -108,5 +116,39 @@ public class TCC : MonoBehaviour
         isIDHost = Btn_IDHost.pushed;
         isIDFrnd = Btn_IDFrnd.pushed;
         isIDUnk = Btn_IDUnk.pushed;
+
+
+        if(Btn_DispLocal.pushed){
+            if(DispLocal){
+                DispLocal = false;
+            } else {
+                DispLocal = true;
+            }
+        }
+        Btn_DispLocal.lampOn = DispLocal;
+        if(Btn_DispRemote.pushed){
+            if(DispRemote){
+                DispRemote = false;
+            } else {
+                DispRemote = true;
+            }
+        }
+        Btn_DispRemote.lampOn = DispRemote;
+        if(Btn_DispFrnd.pushed){
+            if(DispFrnd){
+                DispFrnd = false;
+            } else {
+                DispFrnd = true;
+            }
+        }
+        Btn_DispFrnd.lampOn = DispFrnd;
+        if(Btn_DispHost.pushed){
+            if(DispHost){
+                DispHost = false;
+            } else {
+                DispHost = true;
+            }
+        }
+        Btn_DispHost.lampOn = DispHost;
     }
 }

@@ -5,13 +5,14 @@ using UnityEngine;
 public class ButtonSwitch : MonoBehaviour
 {
     public bool pushed;
+    public AudioClip clip;
     Transform knob;
-    private AudioSource[] sources;
+    AudioSource source;
     public string name;
     void Start()
     {
         knob = ((transform.GetChild(0)).transform.GetChild(0)).transform.GetChild(0);
-        sources = gameObject.GetComponents<AudioSource>();
+        source = gameObject.GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {  
@@ -20,7 +21,9 @@ public class ButtonSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Mouse0) && pushed){
+            source.PlayOneShot(clip);
+        }
         if (pushed){
             knob.localPosition = new Vector3(0f,0.0036f,0f);
         } else {

@@ -20,8 +20,12 @@ public class tooltip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var textSize = 0;
         if(mouse.tooltipText != null){
+            textSize = mouse.tooltipText.Length * 10;
             tooltipTex.text = mouse.tooltipText;
+            tooltipTex.rectTransform.sizeDelta = new Vector2(textSize,24f);
+            tooltipImage.GetComponent<RectTransform>().sizeDelta = new Vector2(textSize,32f);
             tooltipImage.SetActive(true);
         } else {
             tooltipImage.SetActive(false);
@@ -29,7 +33,7 @@ public class tooltip : MonoBehaviour
         
         var mousePos = Input.mousePosition;
         var magnification = canvasRect.sizeDelta.x / Screen.width;
-        mousePos.x = mousePos.x * magnification - canvasRect.sizeDelta.x / 2 + 100;
+        mousePos.x = mousePos.x * magnification - canvasRect.sizeDelta.x / 2 + textSize / 2 + 32;
         mousePos.y = mousePos.y * magnification - canvasRect.sizeDelta.y / 2 - 32;
         mousePos.z = transform.localPosition.z;
 

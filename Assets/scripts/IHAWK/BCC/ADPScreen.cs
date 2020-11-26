@@ -26,6 +26,7 @@ public class ADPScreen : MonoBehaviour
         echo.GetComponent<SymbolControl>().truck = truck;
         echo.GetComponent<SymbolControl>().scale = scale;
         echo.GetComponent<SymbolControl>().antennaPos = antenna.transform.position;
+        echo.GetComponent<SymbolControl>().tcc = TCC;
         echo.transform.parent = transform;
     }
 }

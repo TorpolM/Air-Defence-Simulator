@@ -9,7 +9,8 @@ public class IndicatorButton : MonoBehaviour
     public bool lampOn;
     public bool lampOnwithPush;
     Transform knob;
-    private AudioSource[] sources;
+    public AudioClip clip;
+    private AudioSource source;
     public Material matOff;
     public Material matOn;
 
@@ -19,7 +20,7 @@ public class IndicatorButton : MonoBehaviour
     void Start()
     {
         knob = transform.GetChild(1);
-        sources = gameObject.GetComponents<AudioSource>();
+        source = gameObject.GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {  
@@ -28,7 +29,9 @@ public class IndicatorButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Mouse0) && pushed){
+            source.PlayOneShot(clip);
+        }
         if (pushed){
             knob.localPosition = new Vector3(0f,0.0012f,0f);
         } else {
