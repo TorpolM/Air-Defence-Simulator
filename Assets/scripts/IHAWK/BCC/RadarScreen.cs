@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RadarScreen : MonoBehaviour
 {
+    bool isTCC;
     public GameObject TCC;
     TCC _TCC;
     public GameObject antenna;
@@ -33,10 +34,6 @@ public class RadarScreen : MonoBehaviour
     List<GameObject> targets = new List<GameObject>();
     List<float> targetStrs = new List<float>();
     List<int> targetIFFs = new List<int>();
-
-    public float Pt;
-    public float dB;
-    public float Ft;
     void Start()
     {
         _TCC = TCC.GetComponent<TCC>();
@@ -54,8 +51,14 @@ public class RadarScreen : MonoBehaviour
         sweepLine.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
         sweepLine.transform.GetChild(0).GetComponent<Image>().color = new Color(0,255,0,_SweepControl.position/255);
 
-        for(int cnt = 0;cnt < 10;cnt++){
-            rangeRings.transform.GetChild(cnt).GetComponent<Image>().color = new Color(0,255,0,_RRControl.position/255);
+        if(isTCC){
+            for(int cnt = 0;cnt < 10;cnt++){
+                rangeRings.transform.GetChild(cnt).GetComponent<Image>().color = new Color(0,255,0,_RRControl.position/255);
+            }
+        } else {
+            for(int cnt = 0;cnt < 8;cnt++){
+                rangeRings.transform.GetChild(cnt).GetComponent<Image>().color = new Color(0,255,0,_RRControl.position/255);
+            }
         }
 
         
@@ -79,7 +82,8 @@ public class RadarScreen : MonoBehaviour
                 echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
             }
 
-            if(_TCC.isIFFAuto || _TCC.isIFFSend){
+
+            if((_TCC.isIFFAuto || _TCC.isIFFSend) && isTCC){
 
                 if(_TCC.isIFFCoded && targetIFFs[cnt2] == 1){
                     echo = Instantiate(IFF);
