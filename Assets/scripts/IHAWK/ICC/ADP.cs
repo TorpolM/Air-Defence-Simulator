@@ -13,6 +13,8 @@ public class ADP :MonoBehaviour{
     Radar_Advanced _par;
     public GameObject TCC;
     TCC _TCC;
+    public GMFCS HPIR_A;
+    public GMFCS HPIR_B;
     public GameObject pointer;
     public GameObject[] screens;
     public GameObject tf;
@@ -21,6 +23,12 @@ public class ADP :MonoBehaviour{
     List<int> targetIFF = new List<int>();
     public GameObject[] trucks;
     public Vector2 pointerPos;
+    truckFile HPIR_A_Assigned;
+    float HPIR_A_Altitude;
+    truckFile HPIR_B_Assigned;
+    float HPIR_B_Altitude;
+
+    
 
     Vector3 lastTargetPos;
     int truckID = 0;
@@ -81,6 +89,7 @@ public class ADP :MonoBehaviour{
                         truckf.GetComponent<truckFile>().currentPos = targetPos;
                         truckf.GetComponent<truckFile>().utime = Time.time;
                         truckf.GetComponent<truckFile>().ID = IFF;
+                        truckf.GetComponent<truckFile>().type = IFF;
                         foreach(GameObject screen in screens){
                             screen.GetComponent<ADPScreen>().newSymbol(truckf);
                         }
@@ -96,22 +105,44 @@ public class ADP :MonoBehaviour{
         ishooked = false;
         foreach(GameObject truck in trucks){
             truckFile _truck = truck.GetComponent<truckFile>();
-
-            
-
-
-            if(Vector2.Distance(_truck.currentPos,pointerPos) < 2000 && !ishooked){
+            Debug.Log(_truck.fileID);
+            if(Vector2.Distance(_truck.currentPos,pointerPos) < 2000 && !ishooked){    
                 if(_TCC.isIDHost){
                     _truck.ID = 2;
+                    _truck.type = 2;
                 }
                 if(_TCC.isIDFrnd){
                     _truck.ID = 1;
+                    _truck.type = 1;
                 }
                 if(_TCC.isIDUnk){
                     _truck.ID = 0;
+                    _truck.type = 0;
                 }
+
+                if(_TCC.isAssignLowA && _truck.type != 6 && HPIR_A_Assigned  == null && HPIR_B_Assigned == null){
+                    _truck.type = 5;
+                    HPIR_A_Altitude = -1111f;
+                    HPIR_A_Assigned = _truck;
+                    HPIR_A.enable = true;
+                    HPIR_A.slaving = true;
+                }
+                
+
                 ishooked = true;
             }
+        }
+
+
+        if(HPIR_A_Assigned != null){
+            if(HPIR_A.tracking){
+                HPIR_A_Assigned.type = 6;
+            } else {
+                HPIR_A.designatePos = new Vector3(HPIR_A_Assigned.currentPos.x,HPIR_A_Altitude,HPIR_A_Assigned.currentPos.y);
+                HPIR_A.rangeGate = Vector3.Distance(HPIR_A.designatePos,parAntenna.transform.position);
+            }
+        } else{
+            HPIR_A.enable = false;
         }
     }
 }

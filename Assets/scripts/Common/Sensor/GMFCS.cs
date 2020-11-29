@@ -5,6 +5,9 @@ using UnityEngine;
 public class GMFCS : MonoBehaviour
 {
     public GameObject radar;
+    public Transform Azimth;
+    public Transform Elevation;
+    public Transform Refarence;
     public GameObject cScanAxis;
     public Vector3 designatePos;
     public float rangeGate;
@@ -21,32 +24,52 @@ public class GMFCS : MonoBehaviour
     Radar_Advanced radarData;
     bool lastTracking;
     Quaternion standbyPos;
+    float azimthOffset;
+    float elevationOffset;
+    float theta = 0;
+    Vector3 TrackPos;
     void Start()
     {
         radarData = radar.GetComponent<Radar_Advanced>();
-        standbyPos = transform.rotation;
+        standbyPos = Refarence.transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
+        azimthOffset = 0;
+        elevationOffset = 0;
+
         if(enable){
             radar.SetActive(true);
             if(slaving){
-                transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction * designatePos),0.5f * Time.deltaTime);
+                Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(designatePos - transform.position),0.5f * Time.deltaTime);
+                azimthOffset = Mathf.Sin(Mathf.Deg2Rad * theta);
+                if(designatePos.y == -1111){
+                    Refarence.localEulerAngles = new Vector3(-5f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
+                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -5f;
+                }
+                if(designatePos.y == -2222){
+                    Refarence.localEulerAngles = new Vector3(-35f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
+                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -25f;
+                }
             }
             trackingTarget = null;
             foreach(GameObject target in radarData.targets){
-                if(Vector3.Distance(designatePos,target.transform.position) < (rangeGate / 10)){
+                if(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - rangeGate) < 1000){
                     trackingTarget = target;
                     slaving = false;
                     tracking = true;
                     isLost = false;
+                    azimthOffset = 0;
+                    elevationOffset = 0;
                 }
+                Debug.Log(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - rangeGate));
             }
             if(tracking && trackingTarget != null){
                 designatePos = trackingTarget.transform.position;
-                transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction * trackingTarget.transform.position),1f * Time.deltaTime);
+                Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(designatePos - transform.position),5f * Time.deltaTime);
+                rangeGate = Vector3.Distance(designatePos,transform.position);
             }
             if(trackingTarget == null){
                 tracking = false;
@@ -72,5 +95,9 @@ public class GMFCS : MonoBehaviour
         }
         missiles.Clear();
         lastTracking = tracking;
+        theta += 180 * Time.deltaTime;
+
+        Azimth.transform.localEulerAngles = new Vector3(0,Refarence.localEulerAngles.y + azimthOffset,0);
+        Elevation.transform.localEulerAngles = new Vector3(Refarence.localEulerAngles.x + elevationOffset,0,0);
     }
 }

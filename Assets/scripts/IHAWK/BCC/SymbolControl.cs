@@ -24,7 +24,7 @@ public class SymbolControl : MonoBehaviour
     void Update()
     {
         if(truck != null){
-            ID = _truck.ID;
+            ID = _truck.type;
             transform.GetComponent<Image>().sprite = images[ID];
             transform.localScale = new Vector3(1f,1f,1f);
             transform.localEulerAngles = new Vector3(0f,0f,0f);

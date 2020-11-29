@@ -8,7 +8,9 @@ public class truckFile:MonoBehaviour{
     public Vector2 truckVector;
     public Vector2 currentPos;
     public float utime;
-    public int ID = 0;  //0:UNK 1:FRND 2:HOST 3:OSVAHost 4:PltHost
+    public int ID = 0;  //0:UNK 1:FRND 2:HOST
+    public bool isRemote;
+    public int type = 0;//0:UNK 1:FRND 2:HOST 3:OSVAHost 4:PltHost 5:Assigned 6:tracked;
 
 
     void Start(){

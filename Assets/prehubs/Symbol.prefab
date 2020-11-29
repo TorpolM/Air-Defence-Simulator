@@ -85,11 +85,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068bbcc966ba70f48964e9b4b662d439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tcc: {fileID: 0}
   images:
   - {fileID: 21300000, guid: bbc7b935c40c828458220dfb75190e2a, type: 3}
   - {fileID: 21300000, guid: 778e0e34aa51bae4eb318602b7c0f621, type: 3}
   - {fileID: 21300000, guid: 5883d99f10fa50d449938a318fd09982, type: 3}
   - {fileID: 21300000, guid: 69d6d90743232634ca8a4daf6a748038, type: 3}
   - {fileID: 21300000, guid: 0e9b9f97bbf8f0b44a2597f1d4a1862c, type: 3}
+  - {fileID: 21300000, guid: 7d5a325c71991274fbd5371f2a400370, type: 3}
+  - {fileID: 0}
+  truck: {fileID: 0}
+  antennaPos: {x: 0, y: 0, z: 0}
+  scale: 0
   ID: 0
   truckID: 0

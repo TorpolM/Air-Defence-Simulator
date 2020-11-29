@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class TCC : MonoBehaviour
 {
+    public GMFCS HPIR_A;
     public GameObject azimuthWheel;
     public RectTransform azimuthCursor;
     public Text azimuthMils;
+    public RectTransform FSARepeatBack;
     public GameObject lever;
     public RectTransform trackSymbol;
     public IndicatorButton Btn_IFF1;
@@ -35,6 +37,15 @@ public class TCC : MonoBehaviour
     public bool DispFrnd = true;
     public IndicatorButton Btn_DispHost;
     public bool DispHost = true;
+    public ButtonSwitch AssignLowA;
+    public bool isAssignLowA;
+    public ButtonSwitch AssignHighA;
+    public bool isAssignHighA;
+    public ButtonSwitch AssignLowB;
+    public bool isAssignLowB;
+    public ButtonSwitch AssignHighB;
+    public bool isAssignHighB;
+
     public float scale;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +62,9 @@ public class TCC : MonoBehaviour
             azimth += 360;
         }
         azimuthMils.text = Mathf.FloorToInt(azimth * Mathf.Deg2Rad * 1000).ToString("0000");
+
+
+        FSARepeatBack.transform.localEulerAngles = new Vector3(0f,0f,HPIR_A.Azimth.localEulerAngles.y);
 
 
         var leverPos = lever.GetComponent<DesignatorLever>();
@@ -150,5 +164,11 @@ public class TCC : MonoBehaviour
             }
         }
         Btn_DispHost.lampOn = DispHost;
+
+
+        isAssignHighA = AssignHighA.pushed;
+        isAssignLowA = AssignLowA.pushed;
+        isAssignHighB = AssignHighB.pushed;
+        isAssignLowB = AssignLowB.pushed;
     }
 }
