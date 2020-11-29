@@ -13,8 +13,8 @@ public class ADP :MonoBehaviour{
     Radar_Advanced _par;
     public GameObject TCC;
     TCC _TCC;
-    public GMFCS HPIR_A;
-    public GMFCS HPIR_B;
+    public HPIR HPIR_A;
+    public HPIR HPIR_B;
     public GameObject pointer;
     public GameObject[] screens;
     public GameObject tf;
@@ -125,7 +125,7 @@ public class ADP :MonoBehaviour{
                     HPIR_A_Altitude = -1111f;
                     HPIR_A_Assigned = _truck;
                     HPIR_A.enable = true;
-                    HPIR_A.slaving = true;
+                    HPIR_A.designating = true;
                 }
                 
 
@@ -139,7 +139,7 @@ public class ADP :MonoBehaviour{
                 HPIR_A_Assigned.type = 6;
             } else {
                 HPIR_A.designatePos = new Vector3(HPIR_A_Assigned.currentPos.x,HPIR_A_Altitude,HPIR_A_Assigned.currentPos.y);
-                HPIR_A.rangeGate = Vector3.Distance(HPIR_A.designatePos,parAntenna.transform.position);
+                HPIR_A.designateRange = Vector3.Distance(HPIR_A.designatePos,parAntenna.transform.position);
             }
         } else{
             HPIR_A.enable = false;

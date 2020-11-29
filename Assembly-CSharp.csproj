@@ -124,6 +124,7 @@
      <Compile Include="Assets\scripts\IHAWK\BCC\SymbolControl.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\TCC.cs" />
      <Compile Include="Assets\scripts\IHAWK\camEffectMono.cs" />
+     <Compile Include="Assets\scripts\IHAWK\HPIR\HPIR.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\ADP.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\truckFile.cs" />
      <Compile Include="Assets\scripts\IHAWK\WDS\DAC\DAC.cs" />

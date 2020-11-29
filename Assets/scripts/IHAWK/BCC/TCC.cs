@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class TCC : MonoBehaviour
 {
-    public GMFCS HPIR_A;
+    public HPIR HPIR_A;
     public GameObject azimuthWheel;
     public RectTransform azimuthCursor;
     public Text azimuthMils;
     public RectTransform FSARepeatBack;
+    public RectTransform FSARepeatBackRange;
     public GameObject lever;
     public RectTransform trackSymbol;
     public IndicatorButton Btn_IFF1;
@@ -64,7 +65,8 @@ public class TCC : MonoBehaviour
         azimuthMils.text = Mathf.FloorToInt(azimth * Mathf.Deg2Rad * 1000).ToString("0000");
 
 
-        FSARepeatBack.transform.localEulerAngles = new Vector3(0f,0f,HPIR_A.Azimth.localEulerAngles.y);
+        FSARepeatBack.transform.localEulerAngles = new Vector3(0f,0f,HPIR_A.Refarence.localEulerAngles.y);
+        FSARepeatBackRange.transform.localPosition = new Vector3(0f,Mathf.Lerp(FSARepeatBackRange.transform.localPosition.y,HPIR_A.rangeGate / scale * 512,3.2f * Time.deltaTime),0);
 
 
         var leverPos = lever.GetComponent<DesignatorLever>();
