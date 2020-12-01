@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HPIR : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public FCC _FCC;
+    public ADP _ADP;
     public Radar_Advanced radar;
     public Transform Azimth;
     public Transform Elevation;
@@ -23,7 +24,10 @@ public class HPIR : MonoBehaviour
     float azimthOffset;
     float elevationOffset;
     float theta = 0;
-    Vector3 TrackPos;
+    public Vector3 TrackPos;
+    public float targetStr;
+    public float targetAlt;
+    public float targetSpd;
     
     public List<GameObject> missiles = new List<GameObject>();
     void Start()
@@ -40,12 +44,12 @@ public class HPIR : MonoBehaviour
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(designatePos - transform.position),0.5f * Time.deltaTime);
                 azimthOffset = Mathf.Sin(Mathf.Deg2Rad * theta);
                 if(designatePos.y == -1111){
-                    Refarence.localEulerAngles = new Vector3(-5f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
-                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -5f;
+                    Refarence.localEulerAngles = new Vector3(-3f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
+                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -3f;
                 }
                 if(designatePos.y == -2222){
-                    Refarence.localEulerAngles = new Vector3(-35f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
-                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -25f;
+                    Refarence.localEulerAngles = new Vector3(-25.5f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
+                    elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -19.5f;
                 }
                 foreach(GameObject target in radar.targets){
                     if(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - designateRange) < 1000){
@@ -65,6 +69,8 @@ public class HPIR : MonoBehaviour
                 azimthOffset = 0;
                 elevationOffset = 0;
             }
+            var index = 0;
+            targetStr = 0;
             if(tracking){
                 foreach(GameObject target in radar.targets){
                     if(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - rangeGate) < 1000){
@@ -72,8 +78,11 @@ public class HPIR : MonoBehaviour
                         TrackPos = trackingTarget.transform.position;
                         rangeGate = Vector3.Distance(target.transform.position,transform.position);
                         tracking = true;
+                        targetAlt = TrackPos.y;
+                        targetStr = radar.targetStrs[index];
                         break;
                     }
+                    index += 1;
                 }
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(TrackPos - transform.position),5f * Time.deltaTime);
             }
@@ -93,9 +102,17 @@ public class HPIR : MonoBehaviour
             designating = false;
             isLost = false;
             tracking = false;
+            targetAlt = 0;
             Refarence.transform.rotation = Quaternion.Slerp(Refarence.transform.rotation,standbyPos,1f * Time.deltaTime);
-            rangeGate = 100000;
+            rangeGate = 80000;
         }
+
+
+        if(_FCC.isBreakLock){
+            enable = false;
+        }
+
+
         theta += 180 * Time.deltaTime;
 
         Azimth.transform.localEulerAngles = new Vector3(0,Refarence.localEulerAngles.y + azimthOffset,0);

@@ -1392,7 +1392,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Unknown
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &46795624
 BoxCollider:
@@ -3819,7 +3819,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1706388626}
+  - {fileID: 1624770394}
+  - {fileID: 185273909}
   m_Father: {fileID: 1854259994}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3921,7 +3924,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: ADCP Pointer Clear
@@ -4308,9 +4311,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &76484961
 BoxCollider:
@@ -4780,7 +4781,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: FS-B Engate Other
@@ -5277,13 +5278,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1799905024}
+  - {fileID: 1163491541}
   m_Father: {fileID: 1854259994}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -889, y: 706}
+  m_AnchoredPosition: {x: -889, y: 718.9}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103934624
@@ -5552,7 +5555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &108566847
 BoxCollider:
@@ -6114,7 +6117,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -6942,7 +6945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &138816246
 BoxCollider:
@@ -7385,7 +7388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &143747931
 BoxCollider:
@@ -8008,7 +8011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &159292071
 BoxCollider:
@@ -8093,7 +8096,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Vital Area Call
@@ -9438,6 +9441,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183301930}
   m_Mesh: {fileID: 4300000, guid: cf0030dcfc4d01a45b872a401cd13af1, type: 3}
+--- !u!1 &185273908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185273909}
+  - component: {fileID: 185273911}
+  - component: {fileID: 185273910}
+  m_Layer: 9
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &185273909
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185273908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 62949175}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -86.5, y: -40.1}
+  m_SizeDelta: {x: 4, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &185273910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185273908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &185273911
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185273908}
+  m_CullTransparentMesh: 0
 --- !u!1 &192819873
 GameObject:
   m_ObjectHideFlags: 0
@@ -10282,7 +10357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &219538526
 BoxCollider:
@@ -10695,7 +10770,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -11134,7 +11209,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Friendly
@@ -13018,7 +13093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322519936}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1352, y: 3000, z: 49270}
+  m_LocalPosition: {x: -1352, y: 3000, z: 29270}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13959,7 +14034,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Hostile
@@ -14149,6 +14224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 974541e3f6c84264aa92386b490e238d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _FCC: {fileID: 581210154}
+  _ADP: {fileID: 375392588}
   radar: {fileID: 1573377418}
   Azimth: {fileID: 1088483744}
   Elevation: {fileID: 222421018}
@@ -14162,6 +14239,10 @@ MonoBehaviour:
   tracking: 0
   isGuiding: 0
   isLost: 0
+  TrackPos: {x: 0, y: 0, z: 0}
+  targetStr: 0
+  targetAlt: 0
+  targetSpd: 0
   missiles: []
 --- !u!1 &361008169
 GameObject:
@@ -14684,7 +14765,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: CW Confirm
@@ -14929,7 +15010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &371635266
 BoxCollider:
@@ -15099,6 +15180,7 @@ MonoBehaviour:
   inADPSector: 0
   trucks: []
   pointerPos: {x: 0, y: 0}
+  OSVRPos: {x: 0, y: 0}
 --- !u!1 &376147574
 GameObject:
   m_ObjectHideFlags: 0
@@ -16037,7 +16119,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Display Remote Track
@@ -16297,7 +16379,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -17390,7 +17472,7 @@ GameObject:
   - component: {fileID: 450195331}
   - component: {fileID: 450195332}
   m_Layer: 9
-  m_Name: Btn_FireMode
+  m_Name: Swt_FireMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17460,9 +17542,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: 30
   moveAngle: -60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 8300000, guid: 0f4c086db9a0a284588db7ac596ac03b, type: 3}
   name: Fire Mode
 --- !u!82 &450195332
 AudioSource:
@@ -18208,7 +18288,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Vital Area Insert
@@ -18866,7 +18946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &474872757
 BoxCollider:
@@ -22206,9 +22286,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tcc: {fileID: 911295113}
+  HPIR_A: {fileID: 359050437}
+  FSARepeatBack: {fileID: 766178189}
+  FSARepeatBackRange: {fileID: 900752967}
+  AltMeter: {fileID: 1163491541}
+  SigStr: {fileID: 185273909}
   azimuthWheel: {fileID: 178920240}
   azimuthCursor: {fileID: 715376801}
   trackSymbol: {fileID: 1616259772}
+  Btn_BreakLock: {fileID: 219538525}
+  isBreakLock: 0
   scale: 93000
 --- !u!1 &583455592
 GameObject:
@@ -22353,7 +22440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Change Target
 --- !u!65 &588150657
 BoxCollider:
@@ -23121,7 +23208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &601773193
 BoxCollider:
@@ -23309,9 +23396,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &606868963
 BoxCollider:
@@ -23379,6 +23464,7 @@ RectTransform:
   m_Children:
   - {fileID: 2131411384}
   - {fileID: 715376801}
+  - {fileID: 766178189}
   - {fileID: 1505109488}
   - {fileID: 1616259772}
   m_Father: {fileID: 18282000}
@@ -23607,7 +23693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Assign Low
 --- !u!65 &615861582
 BoxCollider:
@@ -24782,7 +24868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &653187176
 BoxCollider:
@@ -27134,9 +27220,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &741390638
 BoxCollider:
@@ -27533,6 +27617,80 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &766178188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 766178189}
+  - component: {fileID: 766178191}
+  - component: {fileID: 766178190}
+  m_Layer: 9
+  m_Name: FS-ARepeatBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &766178189
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766178188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 848095618}
+  - {fileID: 900752967}
+  m_Father: {fileID: 609858224}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &766178190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766178188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &766178191
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766178188}
+  m_CullTransparentMesh: 0
 --- !u!1 &766341838
 GameObject:
   m_ObjectHideFlags: 0
@@ -28102,9 +28260,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: FS-A Resume/Cease Fire
 --- !u!65 &783973241
 BoxCollider:
@@ -29472,7 +29628,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: BB/DF Non Integrate Mode
@@ -29786,9 +29942,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &841072796
 BoxCollider:
@@ -29899,6 +30053,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846877419}
   m_Mesh: {fileID: 4300000, guid: aeb501d6f99302741be1bb4a5b25f0e6, type: 3}
+--- !u!1 &848095617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848095618}
+  - component: {fileID: 848095620}
+  - component: {fileID: 848095619}
+  m_Layer: 9
+  m_Name: sweepline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &848095618
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848095617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 766178189}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: 218}
+  m_SizeDelta: {x: 2, y: 440}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &848095619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848095617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &848095620
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848095617}
+  m_CullTransparentMesh: 0
 --- !u!1 &848462970
 GameObject:
   m_ObjectHideFlags: 0
@@ -29963,7 +30189,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Display Local Track
@@ -31708,6 +31934,78 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &900752966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 900752967}
+  - component: {fileID: 900752969}
+  - component: {fileID: 900752968}
+  m_Layer: 9
+  m_Name: range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &900752967
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900752966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 766178189}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: 440}
+  m_SizeDelta: {x: 32, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &900752968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900752966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &900752969
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900752966}
+  m_CullTransparentMesh: 0
 --- !u!1 &903441798
 GameObject:
   m_ObjectHideFlags: 0
@@ -31880,7 +32178,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Display Friendly Track
@@ -34899,7 +35197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B OSVA Threat
 --- !u!65 &993354635
 BoxCollider:
@@ -35530,7 +35828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1006980086
 BoxCollider:
@@ -35783,7 +36081,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 3
@@ -37791,7 +38089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1073301029
 BoxCollider:
@@ -39731,7 +40029,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -40206,7 +40504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1154840573
 BoxCollider:
@@ -40311,6 +40609,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163110134}
+  m_CullTransparentMesh: 0
+--- !u!1 &1163491540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163491541}
+  - component: {fileID: 1163491543}
+  - component: {fileID: 1163491542}
+  m_Layer: 9
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1163491541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163491540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 103934623}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12.7, y: -230}
+  m_SizeDelta: {x: 4, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1163491542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163491540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1163491543
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163491540}
   m_CullTransparentMesh: 0
 --- !u!1 &1165267492
 GameObject:
@@ -40873,7 +41243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1185558130
 BoxCollider:
@@ -41052,7 +41422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Battery Threat
 --- !u!65 &1187327468
 BoxCollider:
@@ -41647,7 +42017,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 4
@@ -43317,7 +43687,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Test Target
@@ -43489,7 +43859,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.7235748, b: 0.48584908, a: 1}
+  m_Color: {r: 1, g: 0.9269048, b: 0.8632076, a: 1}
   m_Intensity: 0.72
   m_Range: 10
   m_SpotAngle: 30
@@ -43753,7 +44123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1272409613
 BoxCollider:
@@ -44039,7 +44409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Assign High
 --- !u!65 &1284180702
 BoxCollider:
@@ -44379,7 +44749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Acknowledge
 --- !u!65 &1289748607
 BoxCollider:
@@ -44741,7 +45111,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -45557,7 +45927,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -47040,7 +47410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1359855510
 BoxCollider:
@@ -47728,7 +48098,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -47908,7 +48278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1387602725
 BoxCollider:
@@ -48024,9 +48394,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: -60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: FS-B Resume/Cease Fire
 --- !u!65 &1390470500
 BoxCollider:
@@ -48375,7 +48743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Battery Threat
 --- !u!65 &1401988795
 BoxCollider:
@@ -49455,7 +49823,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -49798,7 +50166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Reject
 --- !u!65 &1425729498
 BoxCollider:
@@ -50393,7 +50761,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -50974,7 +51342,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: ADCP Pointer Initiate
@@ -51445,7 +51813,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Display Hostile Track
@@ -51751,7 +52119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1466924192
 BoxCollider:
@@ -52217,7 +52585,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 2
@@ -52705,9 +53073,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &1498064658
 BoxCollider:
@@ -52886,7 +53252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1499922476
 BoxCollider:
@@ -53173,7 +53539,7 @@ RectTransform:
   - {fileID: 687210890}
   - {fileID: 1937435503}
   m_Father: {fileID: 609858224}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54920,7 +55286,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.7235748, b: 0.48584908, a: 1}
+  m_Color: {r: 1, g: 0.92941177, b: 0.8666667, a: 1}
   m_Intensity: 0.72
   m_Range: 10
   m_SpotAngle: 30
@@ -55260,7 +55626,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: BB/DF Mode
@@ -56454,7 +56820,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 609858224}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -56745,6 +57111,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620444970}
   m_CullTransparentMesh: 0
+--- !u!1 &1624770393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624770394}
+  - component: {fileID: 1624770396}
+  - component: {fileID: 1624770395}
+  m_Layer: 9
+  m_Name: SignalStrange (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1624770394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624770393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.8}
+  m_LocalScale: {x: 0.53, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 62949175}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 9.300091, y: -75.1}
+  m_SizeDelta: {x: 400, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1624770395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624770393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 87c316b602156405d92e616621658222, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '-100         -80         -60         -40         -20         -10         '
+--- !u!222 &1624770396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624770393}
+  m_CullTransparentMesh: 0
 --- !u!1 &1627737879
 GameObject:
   m_ObjectHideFlags: 0
@@ -56919,7 +57362,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: IFF Auto Challange Off
@@ -57248,7 +57691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1638150224
 BoxCollider:
@@ -57871,7 +58314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1647835772
 BoxCollider:
@@ -58615,7 +59058,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -59144,7 +59587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Assign Low
 --- !u!82 &1692026633
 AudioSource:
@@ -60010,6 +60453,85 @@ Transform:
   m_Father: {fileID: 11245859}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1706388625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706388626}
+  - component: {fileID: 1706388628}
+  - component: {fileID: 1706388627}
+  m_Layer: 9
+  m_Name: SignalStrange (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1706388626
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706388625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.8}
+  m_LocalScale: {x: 0.48, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 62949175}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.3, y: -61.7}
+  m_SizeDelta: {x: 400, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1706388627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706388625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 87c316b602156405d92e616621658222, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.5
+  m_Text: "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+    \ \n|              |              |              |              |              |
+    \         "
+--- !u!222 &1706388628
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706388625}
+  m_CullTransparentMesh: 0
 --- !u!1 &1711601035
 GameObject:
   m_ObjectHideFlags: 0
@@ -60677,7 +61199,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
   name: Side Lobe Blanking
@@ -62378,6 +62900,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798181966}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1799905023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799905024}
+  - component: {fileID: 1799905026}
+  - component: {fileID: 1799905025}
+  m_Layer: 9
+  m_Name: TgtAlt (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1799905024
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799905023}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.8}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 103934623}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.9, y: -104.4}
+  m_SizeDelta: {x: 100, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1799905025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799905023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 87c316b602156405d92e616621658222, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 6
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "20000 \u2501\n           \u2501\n           \u2501\n           \u2501\n
+    \          \u2501\n15000 \u2501\n           \u2501\n           \u2501\n           \u2501\n
+    \          \u2501\n10000 \u2501\n           \u2501\n           \u2501\n           \u2501\n
+    \          \u2501\n  5000 \u2501\n           \u2501\n           \u2501\n           \u2501\n
+    \          \u2501"
+--- !u!222 &1799905026
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799905023}
+  m_CullTransparentMesh: 0
 --- !u!4 &1801153034
 Transform:
   m_ObjectHideFlags: 0
@@ -62799,7 +63402,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: FS-A Engage Other
@@ -63140,7 +63743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A OSVA Threat
 --- !u!65 &1821398345
 BoxCollider:
@@ -64420,7 +65023,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: Target Read
@@ -64584,9 +65187,7 @@ MonoBehaviour:
   numPosition: 2
   initAngle: -30
   moveAngle: 60
-  sources:
-  - {fileID: 0}
-  - {fileID: 0}
+  sources: {fileID: 0}
   name: Refuse A/B
 --- !u!65 &1878218897
 BoxCollider:
@@ -65139,7 +65740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Assign High
 --- !u!65 &1894838519
 BoxCollider:
@@ -65414,7 +66015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1895946955
 BoxCollider:
@@ -65674,7 +66275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1898117975
 BoxCollider:
@@ -66673,7 +67274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Change Target
 --- !u!65 &1933110753
 BoxCollider:
@@ -67440,7 +68041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &1945877781
 BoxCollider:
@@ -67632,7 +68233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Reject
 --- !u!65 &1955528044
 BoxCollider:
@@ -68993,7 +69594,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: 
@@ -69323,7 +69924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &2005103780
 BoxCollider:
@@ -69690,7 +70291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Destroy
 --- !u!65 &2023541164
 BoxCollider:
@@ -70272,7 +70873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-A Acknowledge
 --- !u!65 &2037964439
 BoxCollider:
@@ -70923,7 +71524,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: IFF Challange
@@ -71341,7 +71942,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: MTI Mode
@@ -72040,7 +72641,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
   name: MTI-BB/DF Mode
@@ -72529,7 +73130,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -73259,7 +73860,7 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Coded Replay Only/ALL
@@ -73409,7 +74010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushed: 0
-  clip: {fileID: 8300000, guid: a634b9d92bf4ee04788a6ccd263b7bb2, type: 3}
+  clip: {fileID: 8300000, guid: 4ff4bbb9b740ebe458d969bbb2037590, type: 3}
   name: FS-B Destory
 --- !u!65 &2140733620
 BoxCollider:
@@ -73699,7 +74300,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: IFF Mode 1
@@ -74468,7 +75069,7 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
-  clip: {fileID: 8300000, guid: ac237011bbe700e42ab67e881626b7f4, type: 3}
+  clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
   name: 
@@ -75185,7 +75786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8786626598529315777}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -30000, y: 3000, z: 50741}
+  m_LocalPosition: {x: -30000, y: 3000, z: 30741}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75304,7 +75905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapID: 0
-  side: 3
+  side: 0
   vehicleType: 0
   HP: 0
   isDestroyed: 0

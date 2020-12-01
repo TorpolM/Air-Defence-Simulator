@@ -23,10 +23,15 @@ public class ADP :MonoBehaviour{
     List<int> targetIFF = new List<int>();
     public GameObject[] trucks;
     public Vector2 pointerPos;
+    public Vector2 OSVRPos;
+    Vector2 PltPos;
     truckFile HPIR_A_Assigned;
     float HPIR_A_Altitude;
     truckFile HPIR_B_Assigned;
     float HPIR_B_Altitude;
+
+    truckFile PlatoonThreat;
+    truckFile OSVRThreat;
 
     
 
@@ -41,6 +46,8 @@ public class ADP :MonoBehaviour{
         _TCC = TCC.GetComponent<TCC>();
         _par = par.GetComponent<Radar_Advanced>();
         lastTargetPos = par.transform.position;
+        OSVRPos = new Vector2(-30000,0);
+        PltPos = new Vector2(parAntenna.transform.position.x,parAntenna.transform.position.z);
     }
 
 
@@ -89,7 +96,6 @@ public class ADP :MonoBehaviour{
                         truckf.GetComponent<truckFile>().currentPos = targetPos;
                         truckf.GetComponent<truckFile>().utime = Time.time;
                         truckf.GetComponent<truckFile>().ID = IFF;
-                        truckf.GetComponent<truckFile>().type = IFF;
                         foreach(GameObject screen in screens){
                             screen.GetComponent<ADPScreen>().newSymbol(truckf);
                         }
@@ -103,170 +109,72 @@ public class ADP :MonoBehaviour{
 
 
         ishooked = false;
+        var OSVRThreatRange = 1000000f;
+        var PlatoonThreatRange = 1000000f;
         foreach(GameObject truck in trucks){
             truckFile _truck = truck.GetComponent<truckFile>();
-            Debug.Log(_truck.fileID);
-            if(Vector2.Distance(_truck.currentPos,pointerPos) < 2000 && !ishooked){    
+            if(Vector2.Distance(_truck.currentPos,pointerPos) < 2000 && !ishooked && !_truck.isTracked){    
                 if(_TCC.isIDHost){
                     _truck.ID = 2;
-                    _truck.type = 2;
                 }
                 if(_TCC.isIDFrnd){
                     _truck.ID = 1;
-                    _truck.type = 1;
                 }
                 if(_TCC.isIDUnk){
                     _truck.ID = 0;
-                    _truck.type = 0;
                 }
 
-                if(_TCC.isAssignLowA && _truck.type != 6 && HPIR_A_Assigned  == null && HPIR_B_Assigned == null){
-                    _truck.type = 5;
+                if(_TCC.isAssignLowA && !_truck.isTracked && HPIR_A_Assigned == null && HPIR_B_Assigned != _truck){
+                    _truck.isAssigned = true;
                     HPIR_A_Altitude = -1111f;
                     HPIR_A_Assigned = _truck;
                     HPIR_A.enable = true;
                     HPIR_A.designating = true;
                 }
-                
-
+                if(_TCC.isAssignHighA && !_truck.isTracked && HPIR_A_Assigned == null && HPIR_B_Assigned != _truck){
+                    _truck.isAssigned = true;
+                    HPIR_A_Altitude = -2222f;
+                    HPIR_A_Assigned = _truck;
+                    HPIR_A.enable = true;
+                    HPIR_A.designating = true;
+                }
                 ishooked = true;
             }
+            _truck.isPltThreat = false;
+            PlatoonThreat = null;
+            if(Vector2.Distance(_truck.currentPos,PltPos) < PlatoonThreatRange && _truck.ID == 2){
+                PlatoonThreatRange = Vector2.Distance(_truck.currentPos,PltPos);
+                PlatoonThreat = _truck;
+            }
+            _truck.isOSVRThreat = false;
+            OSVRThreat = null;
+            if(Vector2.Distance(_truck.currentPos,OSVRPos) < OSVRThreatRange && _truck.ID == 2){
+                OSVRThreatRange = Vector2.Distance(_truck.currentPos,OSVRPos);
+                OSVRThreat = _truck;
+            }
+        }
+
+        if(PlatoonThreat != null){
+            PlatoonThreat.isPltThreat = true;
+        }
+        if(OSVRThreat != null && OSVRThreat != PlatoonThreat){
+            OSVRThreat.isOSVRThreat = true;
         }
 
 
         if(HPIR_A_Assigned != null){
             if(HPIR_A.tracking){
-                HPIR_A_Assigned.type = 6;
+                HPIR_A_Assigned.isTracked = true;
+                Vector2 targetPos = new Vector2(HPIR_A.TrackPos.x,HPIR_A.TrackPos.z); 
+                HPIR_A_Assigned.updateTruck(targetPos,0);
             } else {
                 HPIR_A.designatePos = new Vector3(HPIR_A_Assigned.currentPos.x,HPIR_A_Altitude,HPIR_A_Assigned.currentPos.y);
                 HPIR_A.designateRange = Vector3.Distance(HPIR_A.designatePos,parAntenna.transform.position);
             }
-        } else{
-            HPIR_A.enable = false;
+        }
+        if(!HPIR_A.enable && HPIR_A_Assigned != null){
+            Destroy(HPIR_A_Assigned.gameObject);
+            HPIR_A_Assigned = null;
         }
     }
 }
-
-
-
-
-
-
-
-
-/* 
-public class ADP : MonoBehaviour
-{
-    public float ADPSectorStart;
-    public float ADPSectorEnd;
-    public GameObject parAntenna;
-    public GameObject parforward;
-    public GameObject par;
-    public GameObject tf;
-
-    public GameObject TCC;
-    public GameObject[] screens;
-
-    public bool inADPSector = false;
-    List<GameObject> targets = new List<GameObject>();
-    public List<Vector3> echopos = new List<Vector3>();
-    public List<int> echoIFF = new List<int>();
-    public GameObject[] trucks;
-    int truckID = 0;
-    List<float> targetStrs = new List<float>();
-    List<int> targetIFF = new List<int>();
-    bool isIFF;
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        isIFF = TCC.GetComponent<TCC>().isIFFAuto || TCC.GetComponent<TCC>().isIFFSend;
-
-
-        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorStart) < 1){
-            inADPSector = true;
-        }
-        if(Mathf.Abs(parAntenna.transform.eulerAngles.y - ADPSectorEnd) < 1 && inADPSector){
-            inADPSector = false;
-            float centerX = 0;
-            float centerY = 0;
-            float avtime = 0;
-            int IFF = 0;
-            int cnt = 1;
-            int cnt2 = 0;
-            trucks = GameObject.FindGameObjectsWithTag("ADPTruckFile");
-            while(echopos.Count > 0){
-                centerX = echopos[0].x;
-                centerY = echopos[0].y;
-                avtime = echopos[0].z;
-                if(TCC.GetComponent<TCC>().isIFFAuto || TCC.GetComponent<TCC>().isIFFSend){
-                    if(echoIFF[0] == 1){
-                        IFF = 1;
-                    }
-                }
-                cnt = 1;
-                if(echopos.Count == 1){
-                } else {
-                    while(echopos.Count > 1 && Vector2.Distance(echopos[0],echopos[1]) < 5460){
-                        centerX += echopos[1].x;
-                        centerY += echopos[1].y;
-                        avtime += echopos[1].z;
-                        cnt += 1;
-                        echopos.RemoveAt(1);
-                        echoIFF.RemoveAt(1);
-                    }
-                    centerX = centerX / cnt;
-                    centerY = centerY / cnt;
-                    avtime = avtime / cnt;
-                }
-                Vector2 newpos = new Vector2(centerX,centerY);
-                float nptime = avtime;
-                echopos.RemoveAt(0);
-                echoIFF.RemoveAt(0);
-                bool isCorrelated = false;
-                for(cnt2 = 0;cnt2 < trucks.Length;cnt2++){
-                    truckFile truck = trucks[cnt2].GetComponent<truckFile>();
-                    if(Vector2.Distance(newpos,truck.currentPos) < 6000){
-                        truck.updateTruck(newpos,Time.time - nptime);
-                        isCorrelated = true;
-                        break;
-                    }
-                }
-                if(!isCorrelated){
-                    GameObject truckf = Instantiate(tf);
-                    truckf.transform.parent = transform;
-                    truckf.GetComponent<truckFile>().fileID = truckID;
-                    truckf.GetComponent<truckFile>().truckPos = newpos;
-                    truckf.GetComponent<truckFile>().currentPos = newpos;
-                    truckf.GetComponent<truckFile>().utime = Time.time;
-                    truckf.GetComponent<truckFile>().ID = IFF;
-                    foreach(GameObject screen in screens){
-                        screen.GetComponent<ADPScreen>().newSymbol(truckf);
-                    }
-                    truckID += 1;
-                }
-            }
-            echopos.Clear();
-        }
-        if(inADPSector){
-            targets = par.GetComponent<Radar_Advanced>().targets;
-            targetStrs = par.GetComponent<Radar_Advanced>().targetStrs;
-            targetIFF = par.GetComponent<Radar_Advanced>().targetIFF;
-            for(int cnt = 0;cnt < targets.Count;cnt++){
-                var target = targets[cnt];
-                var PrdB = targetStrs[cnt];
-                if(PrdB > -132 && Vector3.Distance(parAntenna.transform.position,target.transform.position) > 20000f){
-                    echopos.Add(new Vector3(target.transform.position.x,target.transform.position.z,Time.time));
-                    echoIFF.Add(targetIFF[cnt]);
-                }
-            }
-        }
-    }
-}
-*/

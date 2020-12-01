@@ -93,7 +93,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 69d6d90743232634ca8a4daf6a748038, type: 3}
   - {fileID: 21300000, guid: 0e9b9f97bbf8f0b44a2597f1d4a1862c, type: 3}
   - {fileID: 21300000, guid: 7d5a325c71991274fbd5371f2a400370, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 47074aaa6ba83dd4ca29facee8d80ff3, type: 3}
   truck: {fileID: 0}
   antennaPos: {x: 0, y: 0, z: 0}
   scale: 0

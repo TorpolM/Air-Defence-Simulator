@@ -9,7 +9,7 @@ public class Switch : MonoBehaviour
     public float initAngle;
     public float moveAngle;
 
-    public AudioClip[] sources;
+    public AudioClip sources;
     AudioSource source;
     public string name;
     void Start()
@@ -25,14 +25,14 @@ public class Switch : MonoBehaviour
     }
     public void SoundNx(){
         if(position < numPosition - 1){
-            AudioClip clip = sources[0];
+            AudioClip clip = sources;
             source.PlayOneShot(clip);
             position += 1;
         }
     }
     public void SoundPv(){
         if(position > 0){
-            AudioClip clip = sources[0];
+            AudioClip clip = sources;
             source.PlayOneShot(clip);
             position += -1;
         }
