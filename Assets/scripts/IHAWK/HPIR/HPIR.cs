@@ -39,7 +39,7 @@ public class HPIR : MonoBehaviour
     void Update()
     {
         if(enable){
-            trackingTarget = null;
+            TrackPos = new Vector3(-999999,-999999,-999999);
             if(designating){
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(designatePos - transform.position),0.5f * Time.deltaTime);
                 azimthOffset = Mathf.Sin(Mathf.Deg2Rad * theta);
@@ -51,11 +51,10 @@ public class HPIR : MonoBehaviour
                     Refarence.localEulerAngles = new Vector3(-25.5f,Refarence.localEulerAngles.y,Refarence.localEulerAngles.z);
                     elevationOffset = Mathf.Cos(Mathf.Deg2Rad * theta) * -19.5f;
                 }
-                foreach(GameObject target in radar.targets){
-                    if(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - designateRange) < 1000){
-                        trackingTarget = target;
-                        TrackPos = trackingTarget.transform.position;
-                        rangeGate = Vector3.Distance(target.transform.position,transform.position);
+                foreach(RadarData target in radar.targetData){
+                    if(Mathf.Abs(Vector3.Distance(target.position,transform.position) - designateRange) < 1000){
+                        TrackPos = target.position;
+                        rangeGate = Vector3.Distance(target.position,transform.position);
                         designating = false;
                         tracking = true;
                         isLost = false;
@@ -72,21 +71,20 @@ public class HPIR : MonoBehaviour
             var index = 0;
             targetStr = 0;
             if(tracking){
-                foreach(GameObject target in radar.targets){
-                    if(Mathf.Abs(Vector3.Distance(target.transform.position,transform.position) - rangeGate) < 1000){
-                        trackingTarget = target;
-                        TrackPos = trackingTarget.transform.position;
-                        rangeGate = Vector3.Distance(target.transform.position,transform.position);
+                foreach(RadarData target in radar.targetData){
+                    if(Mathf.Abs(Vector3.Distance(target.position,transform.position) - rangeGate) < 1000){
+                        TrackPos = target.position;
+                        rangeGate = Vector3.Distance(target.position,transform.position);
                         tracking = true;
                         targetAlt = TrackPos.y;
-                        targetStr = radar.targetStrs[index];
+                        targetStr = target.IFF;
                         break;
                     }
                     index += 1;
                 }
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(TrackPos - transform.position),5f * Time.deltaTime);
             }
-            if(trackingTarget == null){
+            if(TrackPos == new Vector3(-999999,-999999,-999999)){
                 tracking = false;
             }
             if(lastTracking && !tracking){

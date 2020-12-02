@@ -94,10 +94,9 @@
      <Compile Include="Assets\scripts\Common\PlayerShipControl\ShipControl.cs" />
      <Compile Include="Assets\scripts\Common\Sensor\AntennaSweep.cs" />
      <Compile Include="Assets\scripts\Common\Sensor\Echo.cs" />
-     <Compile Include="Assets\scripts\Common\Sensor\GFCS.cs" />
-     <Compile Include="Assets\scripts\Common\Sensor\GMFCS.cs" />
      <Compile Include="Assets\scripts\Common\Sensor\Radar.cs" />
      <Compile Include="Assets\scripts\Common\Sensor\Radar_Advanced.cs" />
+     <Compile Include="Assets\scripts\Common\Sensor\RadarData.cs" />
      <Compile Include="Assets\scripts\Common\Sensor\RadarSpeedOnly.cs" />
      <Compile Include="Assets\scripts\Common\Ship\ShipMove.cs" />
      <Compile Include="Assets\scripts\Common\Ship\Status_Ship.cs" />
@@ -107,10 +106,8 @@
      <Compile Include="Assets\scripts\Common\View\ExternalCameraControl.cs" />
      <Compile Include="Assets\scripts\Common\View\InternalCam.cs" />
      <Compile Include="Assets\scripts\Common\View\ViewControl.cs" />
-     <Compile Include="Assets\scripts\Common\Weapon\Gun.cs" />
+     <Compile Include="Assets\scripts\Common\Weapon\Jammer.cs" />
      <Compile Include="Assets\scripts\Common\Weapon\missile_ARH.cs" />
-     <Compile Include="Assets\scripts\Common\Weapon\Missile_SARH.cs" />
-     <Compile Include="Assets\scripts\Common\Weapon\MissileLauncher.cs" />
      <Compile Include="Assets\scripts\Common\Weapon\Shell.cs" />
      <Compile Include="Assets\scripts\Common\Weapon\Status_Missile.cs" />
      <Compile Include="Assets\scripts\Common\Weapon\Turret.cs" />
@@ -127,12 +124,6 @@
      <Compile Include="Assets\scripts\IHAWK\HPIR\HPIR.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\ADP.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\truckFile.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\DAC\DAC.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\TSTC\Pantaograph.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\TSTC\pantaographGrip.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\TSTC\TSTC.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\WAC\WAC.cs" />
-     <Compile Include="Assets\scripts\IHAWK\WDS\WDSComputer.cs" />
      <Compile Include="Assets\scripts\speedmeter.cs" />
      <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
      <None Include="Assets\terrain\terrain_memo.txt" />

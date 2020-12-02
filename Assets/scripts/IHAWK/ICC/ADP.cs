@@ -19,8 +19,8 @@ public class ADP :MonoBehaviour{
     public GameObject[] screens;
     public GameObject tf;
     public bool inADPSector = false;
-    List<GameObject> targets = new List<GameObject>();
-    List<int> targetIFF = new List<int>();
+    List<RadarData> targets = new List<RadarData>();
+    RadarData tgt;
     public GameObject[] trucks;
     public Vector2 pointerPos;
     public Vector2 OSVRPos;
@@ -64,12 +64,11 @@ public class ADP :MonoBehaviour{
         pointerPos = new Vector2(pointer.transform.localPosition.x / -512 * _TCC.scale + parAntenna.transform.position.x,pointer.transform.localPosition.y / 512 * _TCC.scale + parAntenna.transform.position.z);
 
         if(inADPSector){
-            targets = _par.targets;
-            targetIFF = _par.targetIFF;
+            targets = _par.targetData;
             cnt = 0;
-            foreach (GameObject target in targets){
-                if(Vector3.Distance(target.transform.position,lastTargetPos) > 5460){
-                    Vector2 targetPos = new Vector2(target.transform.position.x,target.transform.position.z); 
+            foreach (RadarData target in targets){
+                if(Vector3.Distance(target.position,lastTargetPos) > 5460){
+                    Vector2 targetPos = new Vector2(target.position.x,target.position.z); 
                     bool isCorrelated = false;
                     foreach(GameObject truck in trucks){
                         truckFile _truck = truck.GetComponent<truckFile>();
@@ -79,13 +78,13 @@ public class ADP :MonoBehaviour{
                             break;
                         }
                     }
-                    if(!isCorrelated){
+                    if(!isCorrelated && trucks.Length < 16){
                         int IFF = 0;
                         if(_TCC.isIFFAuto || _TCC.isIFFSend){
-                            if(targetIFF[cnt] == 1){
+                            if(target.IFF == 1){
                                 IFF = 1;
                             }
-                            if(targetIFF[cnt] == 2){
+                            if(target.IFF == 2){
                                 IFF = 2;
                             }
                         }
@@ -101,7 +100,7 @@ public class ADP :MonoBehaviour{
                         }
                         truckID += 1;
                     }
-                    lastTargetPos = target.transform.position;
+                    lastTargetPos = target.position;
                 }
                 cnt += 1;
             }

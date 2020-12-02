@@ -30,10 +30,8 @@ public class RadarScreen : MonoBehaviour
     public float scale;
     public AnimationCurve curve;
     public int displayMode;
-
-    List<GameObject> targets = new List<GameObject>();
-    List<float> targetStrs = new List<float>();
-    List<int> targetIFFs = new List<int>();
+    List<RadarData> tgtData = new List<RadarData>();
+    RadarData tgt;
     void Start()
     {
         _TCC = TCC.GetComponent<TCC>();
@@ -64,17 +62,15 @@ public class RadarScreen : MonoBehaviour
         
 
         //PPI-MTI
-        targets = _beam.targets;
-        targetStrs = _beam.targetStrs;
-        targetIFFs = _beam.targetIFF;
-        for(int cnt2 = 0;cnt2 < targets.Count;cnt2++){
-            var target = targets[cnt2];
-            var range = Vector3.Distance(target.transform.position,antenna.transform.position);
+        tgtData = _beam.targetData;
+        for(int cnt2 = 0;cnt2 < tgtData.Count;cnt2++){
+            tgt = tgtData[cnt2];
+            var range = Vector3.Distance(tgt.position,antenna.transform.position);
             GameObject echo = Instantiate(blip);
             echo.transform.parent = transform;
-		    var PrdB = targetStrs[cnt2];
+		    var PrdB = tgt.SignalStr;
             var size = Mathf.InverseLerp(100,20,-PrdB) + 1;
-            var pos = target.transform.position - antenna.transform.position;
+            var pos = tgt.position - antenna.transform.position;
             echo.GetComponent<BlipControl>().intencity = _VideoControl.position/255;
             echo.transform.localScale = new Vector3(range / scale * 2 + 1 * size,1*size,pos.y);
             echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
@@ -85,7 +81,7 @@ public class RadarScreen : MonoBehaviour
 
             if((_TCC.isIFFAuto || _TCC.isIFFSend) && isTCC){
 
-                if(_TCC.isIFFCoded && targetIFFs[cnt2] == 1){
+                if(_TCC.isIFFCoded && tgt.IFF == 1){
                     echo = Instantiate(IFF);
                     echo.transform.parent = transform;
                     pos = Vector3.Normalize(pos) * (range + 1280);
@@ -96,7 +92,7 @@ public class RadarScreen : MonoBehaviour
                         echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
                     }
                 }
-                if(!_TCC.isIFFCoded && (targetIFFs[cnt2] == 1 || targetIFFs[cnt2] == 3)){
+                if(!_TCC.isIFFCoded && (tgt.IFF == 1 || tgt.IFF == 3)){
                     echo = Instantiate(IFF);
                     echo.transform.parent = transform;
                     pos = Vector3.Normalize(pos) * (range + 1280);
@@ -109,22 +105,19 @@ public class RadarScreen : MonoBehaviour
                 }
             }
             
+
         }
 
-        
-
-
         //PSI
-        targets = _beamCW.targets;
-        targetStrs = _beamCW.targetStrs;
-        for(int cnt2 = 0;cnt2 < targets.Count;cnt2++){
-            var target = targets[cnt2];
+        tgtData = _beamCW.targetData;
+        for(int cnt2 = 0;cnt2 <  tgtData.Count;cnt2++){
+             tgt = tgtData[cnt2];
             GameObject echo = Instantiate(blipCW);
             echo.transform.parent = transform;
-		    var PrdB = targetStrs[cnt2];
-            var spd = Mathf.Cos(Vector3.Angle(antennaCW.transform.forward,target.transform.forward) * Mathf.Deg2Rad) * -target.GetComponent<Rigidbody>().velocity.magnitude;
+		    var PrdB = tgt;
+            var spd = Mathf.Cos(Vector3.Angle(antennaCW.transform.forward,tgt.forward) * Mathf.Deg2Rad) * -tgt.velocity.magnitude;
             spd = spd / 1234 * 75;
-            var pos = Vector3.Normalize(target.transform.position - antenna.transform.position);
+            var pos = Vector3.Normalize(tgt.position - antenna.transform.position);
             echo.transform.GetComponent<Image>().color = new Color(0,255,0,VideoControl.GetComponent<handwheel>().position/255);
             pos = pos * (494f - spd);
             echo.transform.localScale = new Vector3(1,1,1);
@@ -133,41 +126,6 @@ public class RadarScreen : MonoBehaviour
                 echo.transform.localPosition = new Vector3(-pos.x,pos.z,0f);;
             }
         }
-
-
-
-        /*----Clutters
-        for(int cnt = 0;cnt < Random.Range(2,8);cnt++){
-            GameObject echo = Instantiate(blip);
-            echo.transform.parent = transform;
-            var size = CurveWeightedRandom(curve) * 0.24f + 0.01f;
-            echo.transform.localScale = new Vector3(size,size,1f);
-            echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-            var dist = CurveWeightedRandom(curve) * 512f;
-            var angle = antenna.transform.eulerAngles.y-90f;
-            echo.transform.localPosition = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad) * -dist,Mathf.Sin(angle * Mathf.Deg2Rad) * -dist,0f);
-            Destroy(echo,size);
-        }
-        var rayPosition = antenna.transform.position; 
-        Ray ray = new Ray(rayPosition,antenna.transform.forward); 
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,100000))
-        {
-            if (hit.collider.tag == "terrain") 
-            {
-                
-                GameObject echo = Instantiate(blip);
-                echo.transform.parent = transform;
-                var pos = hit.point - antenna.transform.position;
-                var size = CurveWeightedRandom(curve) * 0.64f + 0.12f;
-                echo.transform.localScale = new Vector3(size,size,pos.y);
-                echo.transform.localEulerAngles = new Vector3(0f,0f,antenna.transform.eulerAngles.y);
-                if(pos.x / scale * 512f < 512f && pos.z / scale * 512f < 512f){
-                    echo.transform.localPosition = new Vector3(pos.x / scale * -512f,pos.z / scale * 512f,0f);
-                }
-                Destroy(echo,size);
-            }
-        }*/
     }
 
 
