@@ -1392,6 +1392,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -3924,6 +3926,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -4781,6 +4785,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -6117,6 +6123,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -8096,6 +8104,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -10770,6 +10780,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -11209,6 +11221,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -14034,6 +14048,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -14765,6 +14781,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -16119,6 +16137,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -16379,9 +16399,11 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
-  matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
+  matOn: {fileID: 2100000, guid: 27f8bcce6e65a1644b444d2f3588ce7b, type: 2}
   name: IFF Mode 1
 --- !u!1 &410952450
 GameObject:
@@ -18288,6 +18310,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -29628,6 +29652,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -30189,6 +30215,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -32178,6 +32206,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -36094,6 +36124,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -40040,6 +40072,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -42028,6 +42062,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -43698,6 +43734,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -45122,9 +45160,11 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0.15
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
-  matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
+  matOn: {fileID: 2100000, guid: 27f8bcce6e65a1644b444d2f3588ce7b, type: 2}
   name: IFF Mode 1
 --- !u!1 &1302719795
 GameObject:
@@ -45938,6 +45978,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -48109,6 +48151,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -49834,6 +49878,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -50772,6 +50818,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -51353,6 +51401,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -51824,6 +51874,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -52596,6 +52648,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -55635,6 +55689,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -57371,6 +57427,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -59067,6 +59125,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -61208,6 +61268,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 2a0cb860f2f58524bb8ecf18bbf3aee0, type: 2}
   matOn: {fileID: 2100000, guid: dacd4af4283d46848beafcc43bc8be9e, type: 2}
@@ -63411,6 +63473,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -65032,6 +65096,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -69603,6 +69669,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -71533,6 +71601,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 1
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -71951,6 +72021,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -72650,6 +72722,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: c9d969ae344d4a949b6e3cb72bd88eef, type: 2}
   matOn: {fileID: 2100000, guid: 898118d6b4c415240953b04214a17315, type: 2}
@@ -73139,6 +73213,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -73869,6 +73945,8 @@ MonoBehaviour:
   pushInstant: 1
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -74309,6 +74387,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}
@@ -75078,6 +75158,8 @@ MonoBehaviour:
   pushInstant: 0
   lampOn: 0
   lampOnwithPush: 0
+  flash: 0
+  flashInterval: 0
   clip: {fileID: 8300000, guid: 4c307a553b4219c4abf0d1cdbe52a0f5, type: 3}
   matOff: {fileID: 2100000, guid: 8f63befb9d0debf46b55f91ce136634a, type: 2}
   matOn: {fileID: 2100000, guid: 3bd355d7550b9a54f8e66395258d7df8, type: 2}

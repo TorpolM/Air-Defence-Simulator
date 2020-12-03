@@ -8,6 +8,8 @@ public class IndicatorButton : MonoBehaviour
     public bool pushInstant;
     public bool lampOn;
     public bool lampOnwithPush;
+    public bool flash;
+    public float flashInterval;
     Transform knob;
     public AudioClip clip;
     private AudioSource source;
@@ -16,6 +18,7 @@ public class IndicatorButton : MonoBehaviour
 
     Material[] mats;
     public string name;
+    float lastFlashedTime = 0;
 
     void Start()
     {
@@ -41,6 +44,15 @@ public class IndicatorButton : MonoBehaviour
             lampOn = pushed;
         }
         pushed = false;
+
+        if(flash && Time.time - lastFlashedTime > flashInterval){
+            if(!lampOn){
+                lampOn = true;
+            } else {
+                lampOn = false;
+            }
+            lastFlashedTime = Time.time;
+        }
 
         mats = knob.GetComponent<MeshRenderer>().materials;
         if (lampOn){
