@@ -10,10 +10,14 @@ public class FCC : MonoBehaviour
     public RectTransform FSARepeatBackRange;
     public RectTransform AltMeter;
     public RectTransform SigStr;
+    public RectTransform Speed;
     public GameObject azimuthWheel;
     public RectTransform azimuthCursor;
     public RectTransform trackSymbol;
     public ButtonSwitch Btn_BreakLock;
+    public IndicatorButton searchLamp;
+    public IndicatorButton lockLamp;
+    public IndicatorButton AutoLamp;
     public bool isBreakLock;
      public float scale;
     // Start is called before the first frame update
@@ -31,20 +35,23 @@ public class FCC : MonoBehaviour
             azimth += 360;
         }
 
+        isBreakLock = Btn_BreakLock.pushed;
+
 
         trackSymbol.transform.localPosition = _tcc.trackSymbol.transform.localPosition * (_tcc.scale / scale);
-
 
         FSARepeatBack.transform.localEulerAngles = new Vector3(0f,0f,HPIR_A.Refarence.localEulerAngles.y);
         FSARepeatBackRange.transform.localPosition = new Vector3(0f,Mathf.Lerp(FSARepeatBackRange.transform.localPosition.y,HPIR_A.rangeGate / scale * 512,3.2f * Time.deltaTime),0);
 
-
-        AltMeter.transform.localPosition = new Vector3(AltMeter.transform.localPosition.x,-230 + 90 * (HPIR_A.targetAlt / 20000),AltMeter.transform.localPosition.z);
+        AltMeter.transform.localPosition = new Vector3(AltMeter.transform.localPosition.x,Mathf.Lerp(AltMeter.transform.localPosition.y,-230 + 90 * (HPIR_A.targetAlt / 20000),3.2f * Time.deltaTime),AltMeter.transform.localPosition.z);
         AltMeter.sizeDelta = new Vector2(4,190 * (HPIR_A.targetAlt / 20000));
 
-        SigStr.transform.localPosition = new Vector3(-87 + 184 * Mathf.InverseLerp(100,0,-HPIR_A.targetStr),SigStr.transform.localPosition.y,SigStr.transform.localPosition.z);
+        SigStr.transform.localPosition = new Vector3(Mathf.Lerp(SigStr.transform.localPosition.x,-87 + 182 * Mathf.InverseLerp(100,0,-HPIR_A.targetStr),3.2f * Time.deltaTime),SigStr.transform.localPosition.y,SigStr.transform.localPosition.z);
 
-
-        isBreakLock = Btn_BreakLock.pushed;
+        Speed.transform.localPosition = new Vector3(Mathf.Lerp(Speed.transform.localPosition.x,-87 + 182 * Mathf.InverseLerp(0,4000,-HPIR_A.targetSpd),3.2f * Time.deltaTime),Speed.transform.localPosition.y,Speed.transform.localPosition.z);
+    
+        searchLamp.flash = HPIR_A.isSearch;
+        lockLamp.lampOn = HPIR_A.isLock;
+        AutoLamp.lampOn = HPIR_A.ModeAuto;
     }
 }

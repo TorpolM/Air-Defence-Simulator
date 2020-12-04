@@ -15,10 +15,12 @@ public class HPIR : MonoBehaviour
     public float rangeGate;
     public GameObject trackingTarget;
     public bool enable;
-    public bool designating;
-    public bool tracking;
+    public bool isSearch;
+    public bool isLock;
     public bool isGuiding;
     public bool isLost;
+    public bool ModeAuto;
+    public bool ModeAssign;
     bool lastTracking;
     Quaternion standbyPos;
     float azimthOffset;
@@ -38,9 +40,11 @@ public class HPIR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetStr = -100;
+        targetSpd = 0;
         if(enable){
             TrackPos = new Vector3(-999999,-999999,-999999);
-            if(designating){
+            if(isSearch){
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(designatePos - transform.position),0.5f * Time.deltaTime);
                 azimthOffset = Mathf.Sin(Mathf.Deg2Rad * theta);
                 if(designatePos.y == -1111){
@@ -55,8 +59,8 @@ public class HPIR : MonoBehaviour
                     if(Mathf.Abs(Vector3.Distance(target.position,transform.position) - designateRange) < 1000){
                         TrackPos = target.position;
                         rangeGate = Vector3.Distance(target.position,transform.position);
-                        designating = false;
-                        tracking = true;
+                        isSearch = false;
+                        isLock = true;
                         isLost = false;
                         Refarence.transform.localEulerAngles += new Vector3(elevationOffset,azimthOffset,0);
                         azimthOffset = 0;
@@ -70,14 +74,15 @@ public class HPIR : MonoBehaviour
             }
             var index = 0;
             targetStr = 0;
-            if(tracking){
+            if(isLock){
                 foreach(RadarData target in radar.targetData){
                     if(Mathf.Abs(Vector3.Distance(target.position,transform.position) - rangeGate) < 1000){
                         TrackPos = target.position;
                         rangeGate = Vector3.Distance(target.position,transform.position);
-                        tracking = true;
+                        isLock = true;
                         targetAlt = TrackPos.y;
-                        targetStr = target.IFF;
+                        targetStr = target.SignalStr;
+                        targetSpd = target.velocity.magnitude * 3.6f;
                         break;
                     }
                     index += 1;
@@ -85,9 +90,9 @@ public class HPIR : MonoBehaviour
                 Refarence.rotation = Quaternion.Slerp(Refarence.rotation,Quaternion.LookRotation(TrackPos - transform.position),5f * Time.deltaTime);
             }
             if(TrackPos == new Vector3(-999999,-999999,-999999)){
-                tracking = false;
+                isLock = false;
             }
-            if(lastTracking && !tracking){
+            if(lastTracking && !isLock){
                 isLost = true;
             }
             if(missiles.Count > 0){
@@ -97,9 +102,9 @@ public class HPIR : MonoBehaviour
             }
         } else {
             trackingTarget = null;
-            designating = false;
+            isSearch = false;
             isLost = false;
-            tracking = false;
+            isLock = false;
             targetAlt = 0;
             Refarence.transform.rotation = Quaternion.Slerp(Refarence.transform.rotation,standbyPos,1f * Time.deltaTime);
             rangeGate = 80000;

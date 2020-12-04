@@ -19,6 +19,7 @@ public class IndicatorButton : MonoBehaviour
     Material[] mats;
     public string name;
     float lastFlashedTime = 0;
+    bool lastFlash = false;
 
     void Start()
     {
@@ -53,6 +54,9 @@ public class IndicatorButton : MonoBehaviour
             }
             lastFlashedTime = Time.time;
         }
+        if(!flash && lastFlash){
+            lampOn = false;
+        }
 
         mats = knob.GetComponent<MeshRenderer>().materials;
         if (lampOn){
@@ -65,5 +69,7 @@ public class IndicatorButton : MonoBehaviour
             mats[2] = mats[2];
         }
         knob.GetComponent<MeshRenderer>().materials = mats;
+
+        lastFlash = flash;
     }
 }

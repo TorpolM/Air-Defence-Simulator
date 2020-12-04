@@ -128,14 +128,14 @@ public class ADP :MonoBehaviour{
                     HPIR_A_Altitude = -1111f;
                     HPIR_A_Assigned = _truck;
                     HPIR_A.enable = true;
-                    HPIR_A.designating = true;
+                    HPIR_A.isSearch = true;
                 }
                 if(_TCC.isAssignHighA && !_truck.isTracked && HPIR_A_Assigned == null && HPIR_B_Assigned != _truck){
                     _truck.isAssigned = true;
                     HPIR_A_Altitude = -2222f;
                     HPIR_A_Assigned = _truck;
                     HPIR_A.enable = true;
-                    HPIR_A.designating = true;
+                    HPIR_A.isSearch = true;
                 }
                 ishooked = true;
             }
@@ -162,7 +162,7 @@ public class ADP :MonoBehaviour{
 
 
         if(HPIR_A_Assigned != null){
-            if(HPIR_A.tracking){
+            if(HPIR_A.isLock){
                 HPIR_A_Assigned.isTracked = true;
                 Vector2 targetPos = new Vector2(HPIR_A.TrackPos.x,HPIR_A.TrackPos.z); 
                 HPIR_A_Assigned.updateTruck(targetPos,0);
@@ -170,10 +170,14 @@ public class ADP :MonoBehaviour{
                 HPIR_A.designatePos = new Vector3(HPIR_A_Assigned.currentPos.x,HPIR_A_Altitude,HPIR_A_Assigned.currentPos.y);
                 HPIR_A.designateRange = Vector3.Distance(HPIR_A.designatePos,parAntenna.transform.position);
             }
+            HPIR_A.ModeAuto = true;
         }
         if(!HPIR_A.enable && HPIR_A_Assigned != null){
             Destroy(HPIR_A_Assigned.gameObject);
             HPIR_A_Assigned = null;
+        }
+        if(!HPIR_A.enable){
+            HPIR_A.ModeAuto = false;
         }
     }
 }
