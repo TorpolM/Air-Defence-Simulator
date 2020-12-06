@@ -124,6 +124,8 @@
      <Compile Include="Assets\scripts\IHAWK\HPIR\HPIR.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\ADP.cs" />
      <Compile Include="Assets\scripts\IHAWK\ICC\truckFile.cs" />
+     <Compile Include="Assets\scripts\IHAWK\Laucher.cs" />
+     <Compile Include="Assets\scripts\IHAWK\Missile.cs" />
      <Compile Include="Assets\scripts\speedmeter.cs" />
      <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
      <None Include="Assets\terrain\terrain_memo.txt" />
