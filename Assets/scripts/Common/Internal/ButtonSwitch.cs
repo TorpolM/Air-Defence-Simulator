@@ -5,10 +5,12 @@ using UnityEngine;
 public class ButtonSwitch : MonoBehaviour
 {
     public bool pushed;
+    bool pushinstant;
     public AudioClip clip;
     Transform knob;
     AudioSource source;
     public string name;
+    public bool lastpushed;
     void Start()
     {
         knob = ((transform.GetChild(0)).transform.GetChild(0)).transform.GetChild(0);
@@ -16,6 +18,7 @@ public class ButtonSwitch : MonoBehaviour
     }
     void FixedUpdate()
     {  
+
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class ButtonSwitch : MonoBehaviour
         } else {
             knob.localPosition = new Vector3(0f,0.007183165f,0f);
         }
+        lastpushed = pushed;
         pushed = false;
     }
 }

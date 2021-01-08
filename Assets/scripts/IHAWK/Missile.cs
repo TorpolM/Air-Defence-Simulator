@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject tgt;
     void Start()
     {
         
@@ -14,5 +14,17 @@ public class Missile : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public void onFire(){
+        tgt = transform.GetChild(2).gameObject;
+        transform.GetChild(2).parent = null;
+
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(true);
+
+        transform.parent = null;
+        GetComponent<Rigidbody>().useGravity = true;
     }
 }

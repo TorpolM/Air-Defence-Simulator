@@ -6,6 +6,7 @@ public class FCC : MonoBehaviour
 {
     public TCC _tcc;
     public HPIR HPIR_A;
+    public Laucher lchr_A1;
     public RectTransform FSARepeatBack;
     public RectTransform FSARepeatBackRange;
     public RectTransform AltMeter;
@@ -18,6 +19,7 @@ public class FCC : MonoBehaviour
     public IndicatorButton searchLamp;
     public IndicatorButton lockLamp;
     public IndicatorButton AutoLamp;
+    public ButtonSwitch Fire;
     public bool isBreakLock;
      public float scale;
     // Start is called before the first frame update
@@ -53,5 +55,9 @@ public class FCC : MonoBehaviour
         searchLamp.flash = HPIR_A.isSearch;
         lockLamp.lampOn = HPIR_A.isLock;
         AutoLamp.lampOn = HPIR_A.ModeAuto;
+
+        if(!Fire.lastpushed && Fire.pushed){
+            lchr_A1.launch();
+        }
     }
 }

@@ -66,6 +66,10 @@ public class ViewControl : MonoBehaviour
             viewMode = 5;
             IntCam.changeRoom(3);
         }
+        if(Input.GetKeyDown(KeyCode.F9)){
+            viewMode = 5;
+            IntCam.changeRoom(4);
+        }
         if(Input.GetKeyDown(KeyCode.F2) && Entities != null){
             viewMode = 1;
             if(EntitiyIndex < Entities.Length){

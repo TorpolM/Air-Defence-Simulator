@@ -15,7 +15,7 @@ public class speedmeter : MonoBehaviour
     void Update()
     {
         var speed = (transform.position - lastpos) / Time.deltaTime;
-        Debug.Log(speed.magnitude * 1.944);
+        Debug.Log(speed.magnitude);
         lastpos = transform.position;
     }
 }

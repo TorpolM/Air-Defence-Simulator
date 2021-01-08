@@ -114,6 +114,7 @@
      <Compile Include="Assets\scripts\IHAWK\BCC\ADPScreen.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\ADPScreen_FCC.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\BlipControl.cs" />
+     <Compile Include="Assets\scripts\IHAWK\BCC\CWTDC.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\DesignatorLever.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\FCC.cs" />
      <Compile Include="Assets\scripts\IHAWK\BCC\RadarScreen.cs" />
